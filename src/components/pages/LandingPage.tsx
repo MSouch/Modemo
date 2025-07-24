@@ -32,10 +32,12 @@ const LandingPage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg">
-                  Schedule a Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
+                  <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg">
+                    Schedule a Demo
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </a>
                 <Button className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-lg text-lg">
                   Watch Overview
                 </Button>
@@ -72,9 +74,11 @@ const LandingPage = () => {
                     className="mt-2"
                   />
                 </div>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg text-lg">
-                  Request Demo
-                </Button>
+                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to request a demo of MODEMO.%0D%0A%0D%0ACompany: [Your Company]%0D%0AEmail: [Your Email]%0D%0A%0D%0AThank you!">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg text-lg">
+                    Request Demo
+                  </Button>
+                </a>
                 <p className="text-sm text-gray-500 text-center">
                   30-minute personalized demo • No sales pressure
                 </p>
@@ -280,10 +284,12 @@ const LandingPage = () => {
           <p className="text-xl mb-8 opacity-90">
             Join industry leaders who've transformed their workforce mobilization with MODEMO®.
           </p>
-          <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
-            Schedule Your Demo Today
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
+            <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
+              Schedule Your Demo Today
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </a>
         </div>
       </section>
     </div>

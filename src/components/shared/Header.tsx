@@ -51,9 +51,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
-              Schedule a Demo
-            </Button>
+            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
+              <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
+                Schedule a Demo
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -86,9 +88,11 @@ const Header = () => {
                 </Link>
               ))}
               <a href="#" className="text-blue-600 hover:text-blue-700 transition-colors">Sign In</a>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg w-fit">
-                Schedule a Demo
-              </Button>
+              <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
+                <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg w-fit">
+                  Schedule a Demo
+                </Button>
+              </a>
             </nav>
           </div>
         )}

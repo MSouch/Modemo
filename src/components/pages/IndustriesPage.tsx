@@ -230,10 +230,12 @@ const IndustriesPage = () => {
           <p className="text-xl mb-8 opacity-90">
             See how MODEMO® can transform workforce mobilization in your specific industrial environment.
           </p>
-          <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
-            Discuss Your Industry
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Industry Discussion&body=Hello, I would like to discuss how MODEMO can help in my industry.">
+            <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
+              Discuss Your Industry
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </a>
         </div>
       </section>
     </div>

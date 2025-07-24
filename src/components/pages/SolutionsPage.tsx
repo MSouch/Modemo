@@ -156,10 +156,12 @@ const SolutionsPage = () => {
           <p className="text-xl mb-8 opacity-90">
             Discover how MODEMO® can optimize your specific industrial workforce challenges.
           </p>
-          <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
-            Schedule a Consultation
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Solutions Consultation&body=Hello, I would like to schedule a consultation about MODEMO solutions.">
+            <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
+              Schedule a Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </a>
         </div>
       </section>
     </div>

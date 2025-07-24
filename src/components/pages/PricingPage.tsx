@@ -91,9 +91,11 @@ const PricingPage = () => {
                   </ul>
                 </div>
 
-                <Button className="bg-green-600 hover:bg-green-700 text-white w-full mt-8 py-4 text-lg">
-                  Start Free Trial
-                </Button>
+                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Free Trial Request&body=Hello, I would like to start a free trial of MODEMO.">
+                  <Button className="bg-green-600 hover:bg-green-700 text-white w-full mt-8 py-4 text-lg">
+                    Start Free Trial
+                  </Button>
+                </a>
                 <p className="text-sm text-gray-500 text-center">
                   30-day free trial • Cancel anytime • No setup fees
                 </p>
@@ -281,13 +283,17 @@ const PricingPage = () => {
             Start your free 30-day trial today. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 text-lg">
-              Start Free Trial
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 text-lg">
-              Schedule Demo
-            </Button>
+            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Free Trial Request&body=Hello, I would like to start a free trial of MODEMO.">
+              <Button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 text-lg">
+                Start Free Trial
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
+              <Button className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 text-lg">
+                Schedule Demo
+              </Button>
+            </a>
           </div>
         </div>
       </section>
