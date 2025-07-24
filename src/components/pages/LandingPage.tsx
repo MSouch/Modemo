@@ -74,7 +74,10 @@ const LandingPage = () => {
                     className="mt-2"
                   />
                 </div>
-                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to request a demo of MODEMO.%0D%0A%0D%0ACompany: [Your Company]%0D%0AEmail: [Your Email]%0D%0A%0D%0AThank you!">
+                <a 
+                  href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to request a demo of MODEMO.%0D%0A%0D%0ACompany: [Your Company]%0D%0AEmail: [Your Email]%0D%0A%0D%0AThank you!"
+                  className="block w-full"
+                >
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg text-lg">
                     Request Demo
                   </Button>
