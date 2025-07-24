@@ -32,20 +32,26 @@ const LandingPage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
-                  <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg">
-                    Schedule a Demo
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                <a 
+                  href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO."
+                  className="group relative overflow-hidden"
+                >
+                  <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-green-500/25">
+                    <span className="relative z-10 flex items-center">
+                      Schedule a Demo
+                      <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
                 </a>
-                <Button className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-lg text-lg">
+                <Button className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-8 py-3 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
                   Watch Overview
                 </Button>
               </div>
             </div>
 
             {/* Right Column - Visual/Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
               <div className="text-center mb-6">
                 <img 
                   src={ModemoLogo} 
@@ -76,10 +82,11 @@ const LandingPage = () => {
                 </div>
                 <a 
                   href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to request a demo of MODEMO.%0D%0A%0D%0ACompany: [Your Company]%0D%0AEmail: [Your Email]%0D%0A%0D%0AThank you!"
-                  className="block w-full"
+                  className="block w-full group relative overflow-hidden"
                 >
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg text-lg">
-                    Request Demo
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 relative z-10">
+                    <span className="relative z-10">Request Demo</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
                 </a>
                 <p className="text-sm text-gray-500 text-center">
@@ -105,7 +112,7 @@ const LandingPage = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Problem Side */}
-            <Card className="p-8 border-red-200 bg-red-50">
+            <Card className="p-8 border-red-200 bg-red-50 hover:shadow-xl hover:scale-105 transition-all duration-300 hover:border-red-300">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl text-red-800">❌ Traditional Process</CardTitle>
               </CardHeader>
@@ -141,7 +148,7 @@ const LandingPage = () => {
             </Card>
 
             {/* Solution Side */}
-            <Card className="p-8 border-green-200 bg-green-50">
+            <Card className="p-8 border-green-200 bg-green-50 hover:shadow-xl hover:scale-105 transition-all duration-300 hover:border-green-300">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl text-green-800">✅ MODEMO® Process</CardTitle>
               </CardHeader>
@@ -186,8 +193,8 @@ const LandingPage = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow p-8">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-blue-50 border-2 hover:border-blue-200">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-blue-200 transition-colors duration-300">
                 <Users className="h-10 w-10 text-blue-600" />
               </div>
               <h3 className="text-2xl font-bold mb-4">RTW™ Tracking</h3>
@@ -201,8 +208,8 @@ const LandingPage = () => {
               </ul>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow p-8">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-green-50 border-2 hover:border-green-200">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-green-200 transition-colors duration-300">
                 <Shield className="h-10 w-10 text-green-600" />
               </div>
               <h3 className="text-2xl font-bold mb-4">CrewSpec™ Standards</h3>
@@ -216,8 +223,8 @@ const LandingPage = () => {
               </ul>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow p-8">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-orange-50 border-2 hover:border-orange-200">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-orange-200 transition-colors duration-300">
                 <Clock className="h-10 w-10 text-orange-600" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Gate Acceleration</h3>
@@ -266,7 +273,7 @@ const LandingPage = () => {
           </div>
 
           {/* Testimonial */}
-          <Card className="p-8 bg-blue-50 border-blue-200">
+          <Card className="p-8 bg-blue-50 border-blue-200 hover:shadow-xl hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 hover:scale-102">
             <div className="text-center">
               <blockquote className="text-xl text-gray-800 italic mb-4">
                 "MODEMO® transformed our turnaround mobilization. What used to take 3 weeks now happens in 3 days. The ROI was immediate and dramatic."
@@ -287,10 +294,16 @@ const LandingPage = () => {
           <p className="text-xl mb-8 opacity-90">
             Join industry leaders who've transformed their workforce mobilization with MODEMO®.
           </p>
-          <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
-            <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
-              Schedule Your Demo Today
-              <ArrowRight className="ml-2 h-5 w-5" />
+          <a 
+            href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO."
+            className="group relative inline-block"
+          >
+            <Button className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700 px-8 py-3 text-lg rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-white/25 relative z-10">
+              <span className="relative z-10 flex items-center">
+                Schedule Your Demo Today
+                <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
             </Button>
           </a>
         </div>
