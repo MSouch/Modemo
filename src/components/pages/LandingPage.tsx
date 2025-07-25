@@ -116,14 +116,14 @@ const LandingPage = () => {
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl text-red-800">❌ Traditional Process</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="w-6 h-6 bg-red-200 rounded-full flex items-center justify-center mr-3 mt-0.5">
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">Paper-Based Chaos</h4>
-                    <p className="text-red-700">Spreadsheets, emails, and manual processes create bottlenecks</p>
+                    <h4 className="font-bold text-red-800">25% Unqualified Workers</h4>
+                    <p className="text-red-700">Industry data shows 1 in 4 workers arrive with qualification issues, creating chaos</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -131,8 +131,8 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">No Crew Visibility</h4>
-                    <p className="text-red-700">Discover skill gaps and compliance issues on arrival day</p>
+                    <h4 className="font-bold text-red-800">2-4 Hours Unbillable Time</h4>
+                    <p className="text-red-700">Workers wait for qualification verification instead of producing revenue</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -140,11 +140,11 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">Gate Bottlenecks</h4>
-                    <p className="text-red-700">Hours-long waits while processing hundreds of workers</p>
+                    <h4 className="font-bold text-red-800">Million-Dollar Daily Losses</h4>
+                    <p className="text-red-700">Production delays cost $1-3 million per day during STO events</p>
                   </div>
                 </div>
-              </CardContent>
+              </div>
             </Card>
 
             {/* Solution Side */}
@@ -156,22 +156,22 @@ const LandingPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">Digital-First Platform</h4>
-                    <p className="text-green-700">Automated workflows eliminate manual bottlenecks</p>
+                    <h4 className="font-bold text-green-800">Immediate Billing & RTW™ Status</h4>
+                    <p className="text-green-700">Workers are productive and billable from their first hour on site</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">RTW™ Dashboard</h4>
-                    <p className="text-green-700">Real-time visibility into crew readiness before they arrive</p>
+                    <h4 className="font-bold text-green-800">CrewSpec™ Verification</h4>
+                    <p className="text-green-700">Prove you're delivering the exact skilled workforce promised in your bid</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">Day 1 Readiness</h4>
-                    <p className="text-green-700">Workers arrive job-ready with validated compliance</p>
+                    <h4 className="font-bold text-green-800">Exponential ROI</h4>
+                    <p className="text-green-700">Save one hour ($42K-125K) and pay for months—save one day and multiply returns</p>
                   </div>
                 </div>
               </CardContent>
@@ -199,12 +199,12 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">RTW™ Tracking</h3>
               <p className="text-gray-600 mb-6">
-                Real-time Ready-to-Work visibility across your entire workforce pipeline, from planning to gate entry.
+                RTW™ certification means a worker has completed every requirement necessary to begin productive work immediately upon site arrival. This game-changing status eliminates costly delays that occur when workers show up unprepared.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
                 <li>• Live crew status dashboard</li>
-                <li>• Compliance tracking</li>
-                <li>• Arrival coordination</li>
+                <li>• 30-day certification expiry alerts</li>
+                <li>• Immediate productivity on arrival</li>
               </ul>
             </Card>
 
@@ -214,12 +214,12 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">CrewSpec™ Standards</h3>
               <p className="text-gray-600 mb-6">
-                Enforce crew quality and standardization with digital skill verification and role requirements.
+                Ensure contractors deliver the exact skilled workforce promised in your bid. Proper journeyman-to-apprentice ratios, adequate foreman coverage, and verified crew composition turn compliance into competitive advantage.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Digital skill verification</li>
-                <li>• Role-based requirements</li>
-                <li>• Quality assurance</li>
+                <li>• Verified crew composition</li>
+                <li>• Journeyman ratio compliance</li>
+                <li>• Foreman coverage validation</li>
               </ul>
             </Card>
 
@@ -229,12 +229,12 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Gate Acceleration</h3>
               <p className="text-gray-600 mb-6">
-                Eliminate gate bottlenecks with pre-validated workers and streamlined entry processes.
+                Industry data shows 25% of workers typically have qualification issues on arrival. MODEMO®'s transparent RTW™ system ensures only fully qualified personnel reach your gates, eliminating costly disruptions.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Pre-validation workflows</li>
-                <li>• Streamlined gate entry</li>
-                <li>• Reduced wait times</li>
+                <li>• Pre-validated workforce</li>
+                <li>• Eliminate gate bottlenecks</li>
+                <li>• Zero qualification delays</li>
               </ul>
             </Card>
           </div>
@@ -254,21 +254,66 @@ const LandingPage = () => {
           </div>
 
           <div className="grid md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">85%</div>
-              <p className="text-gray-600">Faster Mobilization</p>
+            <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
+              <div className="text-4xl font-bold text-green-600 mb-2">$1M+</div>
+              <p className="text-gray-600">Saved Per STO Event</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">$2.3M</div>
-              <p className="text-gray-600">Average Savings</p>
+            <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
+              <div className="text-4xl font-bold text-blue-600 mb-2">5.7x</div>
+              <p className="text-gray-600">Proven ROI</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">50%</div>
-              <p className="text-gray-600">Reduced Admin Time</p>
+            <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
+              <div className="text-4xl font-bold text-purple-600 mb-2">$17</div>
+              <p className="text-gray-600">Daily Cost</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">95%</div>
-              <p className="text-gray-600">Compliance Rate</p>
+            <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
+              <div className="text-4xl font-bold text-orange-600 mb-2">RTW™</div>
+              <p className="text-gray-600">Workers Ready Day 1</p>
+            </div>
+          </div>
+
+          {/* Enhanced Value Proposition */}
+          <div className="mb-16">
+            <div className="grid lg:grid-cols-2 gap-12">
+              <Card className="p-8 bg-gradient-to-br from-green-50 to-blue-50 border-green-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-2xl text-green-800 flex items-center">
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mr-3">OWNERS</span>
+                    Exponential ROI
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-4">
+                    Transform your Shutdown, Turnaround, and Outage (STO) events with exponential ROI—at less than <strong>$17/day</strong>, MODEMO® prevents million-dollar delays.
+                  </p>
+                  <p className="text-gray-700 mb-4">
+                    When daily production losses range from $1-3 million, saving just one hour ($42,000-125,000) pays for months of MODEMO®. Save one shift and you've covered years.
+                  </p>
+                  <p className="text-green-700 font-semibold">
+                    With CrewSpec™, get the skilled workforce you bid for—proper journeyman-to-apprentice ratios and adequate foreman coverage.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-2xl text-blue-800 flex items-center">
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mr-3">CONTRACTORS</span>
+                    Immediate Billing
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-4">
+                    Start billing immediately when your Ready-to-Work (RTW™) employees arrive on site—no more unbillable hours lost to qualification issues.
+                  </p>
+                  <p className="text-gray-700 mb-4">
+                    With a proven <strong>5.7x return on investment</strong>, MODEMO® dramatically reduces administrative burden by automating paperwork and ensuring audit readiness.
+                  </p>
+                  <p className="text-blue-700 font-semibold">
+                    CrewSpec™ proves you're delivering the exact skilled workforce promised, turning compliance into a competitive advantage.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
