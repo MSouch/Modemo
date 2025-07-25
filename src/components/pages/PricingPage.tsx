@@ -91,13 +91,13 @@ const PricingPage = () => {
                   </ul>
                 </div>
 
-                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Free Trial Request&body=Hello, I would like to start a free trial of MODEMO.">
+                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
                   <Button className="bg-green-600 hover:bg-green-700 text-white w-full mt-8 py-4 text-lg">
-                    Start Free Trial
+                    Schedule Demo
                   </Button>
                 </a>
                 <p className="text-sm text-gray-500 text-center">
-                  30-day free trial • Cancel anytime • No setup fees
+                  30-minute personalized demo • No sales pressure • See MODEMO® in action
                 </p>
               </CardContent>
             </Card>
@@ -233,10 +233,10 @@ const PricingPage = () => {
           <div className="space-y-8">
             <Card className="p-6">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
-                What's included in the free trial?
+                What's included in the demo?
               </h3>
               <p className="text-gray-600">
-                Your 30-day free trial includes full access to all features in your chosen plan, including implementation support and training for your team.
+                Your personalized demo includes a comprehensive walkthrough of all MODEMO® features, including RTW™ tracking, CrewSpec™ standards, and gate acceleration capabilities tailored to your specific use case.
               </p>
             </Card>
 
@@ -280,18 +280,18 @@ const PricingPage = () => {
             </h2>
           </div>
           <p className="text-xl mb-8 opacity-90">
-            Start your free 30-day trial today. No credit card required.
+            See MODEMO® in action with a personalized demo. No commitment required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Free Trial Request&body=Hello, I would like to start a free trial of MODEMO.">
+            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
               <Button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 text-lg">
-                Start Free Trial
+                Schedule Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
-            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
+            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Consultation Request&body=Hello, I would like to discuss MODEMO implementation for our organization.">
               <Button className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 text-lg">
-                Schedule Demo
+                Request Consultation
               </Button>
             </a>
           </div>
