@@ -24,10 +24,10 @@ const LandingPage = () => {
                   </span>
                 </div>
                 <h1 className="text-4xl lg:text-5xl text-gray-900 leading-tight">
-                  Turn Mobilization Chaos into Day 1 Readiness
+                  Get Them Working, Not Waiting
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  MODEMO® is the workforce mobilization platform purpose-built for industrial events—eliminating bottlenecks, enforcing crew quality, and delivering workforce visibility before boots hit the ground.
+                  MODEMO® is a SaaS platform that solves the mobilization chaos plaguing refineries and chemical plants. When you need to coordinate 1,500-2,000 contractors during turnarounds, MODEMO® gives you real-time visibility and control over who's qualified, who's on-site, and who's actually ready to work.
                 </p>
               </div>
 
@@ -103,10 +103,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl text-gray-900 mb-4">
-              Why RTW™ Tracking Benefits Everyone
+              The Real Pain Points
             </h2>
             <p className="text-xl text-gray-600">
-              When non-qualified workers arrive at your site, they create a cascade of problems: bottlenecks at security gates, frustrated skilled workers waiting in line, administrative chaos, and significant productivity losses.
+              Q1 2025, Texas Gulf Coast: 400 contractors stranded at the gate because qualifications weren't verified. After 12 hours of chaos, 100+ workers still waiting in line. Two days of lost momentum you never recover.
             </p>
           </div>
 
@@ -122,8 +122,8 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">25% Workers Have Issues</h4>
-                    <p className="text-red-700">Industry data shows that 25% of workers typically have qualification issues on arrival</p>
+                    <h4 className="font-bold text-red-800">Day One Disasters</h4>
+                    <p className="text-red-700">400 contractors stranded at the gate. 12 hours of chaos. 100+ workers still waiting in line.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -131,8 +131,8 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">Gate Bottlenecks</h4>
-                    <p className="text-red-700">Bottlenecks at security gates, frustrated skilled workers waiting in line</p>
+                    <h4 className="font-bold text-red-800">Production Losses</h4>
+                    <p className="text-red-700">Every day of delay costs $1-3 million. A Gulf Coast refinery lost $12 million from 10-day delays</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -140,8 +140,8 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">Administrative Chaos</h4>
-                    <p className="text-red-700">Administrative chaos and significant productivity losses</p>
+                    <h4 className="font-bold text-red-800">Unbillable Hour Crisis</h4>
+                    <p className="text-red-700">At $85-150/hour for skilled trades, every false start destroys margins. 25% of workers have issues preventing immediate work</p>
                   </div>
                 </div>
               </div>
@@ -156,22 +156,22 @@ const LandingPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">RTW™ System</h4>
-                    <p className="text-green-700">MODEMO®'s transparent RTW™ system ensures only fully qualified personnel reach your gates</p>
+                    <h4 className="font-bold text-green-800">Real-Time Visibility</h4>
+                    <p className="text-green-700">Complete visibility of contractor readiness, prevent costly delays, and ensure everyone who shows up can actually work</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">CrewSpec™ Verification</h4>
-                    <p className="text-green-700">Combined with CrewSpec™ verification, ensures proper crew composition with the right mix of journeymen, apprentices, and foremen</p>
+                    <h4 className="font-bold text-green-800">RTW™ Status</h4>
+                    <p className="text-green-700">Know exactly who's ready to work before deployment. Day 1 becomes predictable instead of chaotic</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">Eliminate Disruptions</h4>
-                    <p className="text-green-700">Eliminating costly disruptions and building stronger, more efficient working relationships</p>
+                    <h4 className="font-bold text-green-800">Built for Major Facilities</h4>
+                    <p className="text-green-700">Built for facilities like BP, ExxonMobil, Lubrizol, Indorama, and Chemours</p>
                   </div>
                 </div>
               </CardContent>
@@ -185,10 +185,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl text-gray-900 mb-4">
-              The MODEMO® Three Pillars
+              MODEMO®'s Three-Step Solution
             </h2>
             <p className="text-xl text-gray-600">
-              Built specifically for industrial workforce mobilization
+              Real-time tracking, automated compliance, seamless coordination
             </p>
           </div>
 
@@ -197,14 +197,14 @@ const LandingPage = () => {
               <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-blue-200 transition-colors duration-300">
                 <Users className="h-10 w-10 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">RTW™ Tracking</h3>
+              <h3 className="text-2xl font-bold mb-4">Clear Event Mobilization Checklists</h3>
               <p className="text-gray-600 mb-6">
-                Understanding Ready-to-Work (RTW™) Status: RTW™ certification means a worker has completed every requirement necessary to begin productive work immediately upon site arrival. This game-changing status eliminates the costly delays that occur when workers show up unprepared.
+                Create site-specific requirements for each trade. Share them 60-90 days before mobilization (the industry best practice). Include exact documentation standards and timelines. Eliminate the last-minute scrambling that creates bottlenecks.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Owners define specific requirements upfront</li>
-                <li>• 30-day advance warnings before credentials expire</li>
-                <li>• Continuous RTW™ status throughout project</li>
+                <li>• Site-specific requirements for each trade</li>
+                <li>• 60-90 days advance sharing</li>
+                <li>• Exact documentation standards</li>
               </ul>
             </Card>
 
@@ -212,14 +212,14 @@ const LandingPage = () => {
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-green-200 transition-colors duration-300">
                 <Shield className="h-10 w-10 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">CrewSpec™ Standards</h3>
+              <h3 className="text-2xl font-bold mb-4">Set Crew Standards with CrewSpec™</h3>
               <p className="text-gray-600 mb-6">
-                Combined with CrewSpec™ verification, owners can ensure not just individual qualifications, but proper crew composition with the right mix of journeymen, apprentices, and foremen for safe, efficient operations.
+                Define minimum journeyman-to-apprentice ratios (1:1 to 1:3). Require adequate foreman coverage (1 per 8-12 workers). Lock in certification levels during bidding. Get the A-team you're paying for, not the B-team that shows up.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Proper crew composition verification</li>
-                <li>• Right mix of skilled workers</li>
-                <li>• Safe, efficient operations</li>
+                <li>• Journeyman-to-apprentice ratios (1:1 to 1:3)</li>
+                <li>• Foreman coverage (1 per 8-12 workers)</li>
+                <li>• Lock in certification levels during bidding</li>
               </ul>
             </Card>
 
@@ -227,14 +227,14 @@ const LandingPage = () => {
               <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-orange-200 transition-colors duration-300">
                 <Clock className="h-10 w-10 text-orange-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Gate Acceleration</h3>
+              <h3 className="text-2xl font-bold mb-4">See Everything with Real-Time Reporting</h3>
               <p className="text-gray-600 mb-6">
-                Only Ready To Work workers should arrive at the site. All others add cost, chaos, frustration, and slow down the flow of RTW workers into the site. Transparent RTW requirements, fulfillment, tracking and streamlining is a money saver to both Owner and Contractor.
+                Track RTW™ status for every worker before arrival. Verify actual crew composition matches bid promises. Spot which contractors are stuck in orientation versus working. Give security complete qualified contractor lists for 75% faster gate processing.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Only RTW™ workers arrive at site</li>
-                <li>• Transparent requirements</li>
-                <li>• Money saver for both parties</li>
+                <li>• Track RTW™ status before arrival</li>
+                <li>• Verify crew composition matches bids</li>
+                <li>• 75% faster gate processing</li>
               </ul>
             </Card>
           </div>
@@ -255,20 +255,20 @@ const LandingPage = () => {
 
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
-              <div className="text-4xl font-bold text-green-600 mb-2">$1M+</div>
-              <p className="text-gray-600">Saved on STO Events</p>
+              <div className="text-4xl font-bold text-green-600 mb-2">$12M</div>
+              <p className="text-gray-600">Gulf Coast Refinery Lost</p>
             </div>
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
-              <div className="text-4xl font-bold text-blue-600 mb-2">5.7x</div>
-              <p className="text-gray-600">Return on Investment</p>
+              <div className="text-4xl font-bold text-blue-600 mb-2">5.2x</div>
+              <p className="text-gray-600">Contractor ROI Year 1</p>
             </div>
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
               <div className="text-4xl font-bold text-purple-600 mb-2">25%</div>
               <p className="text-gray-600">Workers Have Issues</p>
             </div>
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
-              <div className="text-4xl font-bold text-orange-600 mb-2">RTW™</div>
-              <p className="text-gray-600">Ready-to-Work Status</p>
+              <div className="text-4xl font-bold text-orange-600 mb-2">75%</div>
+              <p className="text-gray-600">Faster Gate Processing</p>
             </div>
           </div>
 
@@ -284,13 +284,13 @@ const LandingPage = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700 mb-4">
-                    Transform your Shutdown, Turnaround, and Outage (STO) events with exponential ROI—at less than <strong>$17/day</strong>, MODEMO® prevents million-dollar delays.
+                    Your daily delay cost: $1-3 million in lost production. MODEMO® cost: Less than $17 per day ($500/month). Each day saved pays for years of MODEMO®.
                   </p>
                   <p className="text-gray-700 mb-4">
-                    When daily production losses range from $1-3 million, saving just one hour ($42,000-125,000) pays for months of MODEMO®. Save one shift and you've covered years.
+                    1 hour saved = $42,000-125,000 (based on $1-3M daily production). 1 shift saved = $333,000-1,000,000. 1 day saved = $1,000,000-3,000,000.
                   </p>
                   <p className="text-green-700 font-semibold">
-                    With CrewSpec™, get the skilled workforce you bid for—proper journeyman-to-apprentice ratios and adequate foreman coverage.
+                    At less than $17 per day, the ROI is immediate and measurable. While contractors see 5.2x returns, owners see returns that multiply with every hour of delay prevented.
                   </p>
                 </CardContent>
               </Card>
@@ -304,13 +304,13 @@ const LandingPage = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700 mb-4">
-                    Start billing immediately when your Ready-to-Work (RTW™) employees arrive on site—no more unbillable hours lost to qualification issues.
+                    Your workers show up. They can't work. You eat the cost. Meanwhile, your competitors with MODEMO® are billing from hour one because their crews arrive Ready-To-Work.
                   </p>
                   <p className="text-gray-700 mb-4">
-                    With a proven <strong>5.7x return on investment</strong>, MODEMO® dramatically reduces administrative burden by automating paperwork and ensuring audit readiness.
+                    Save $170-340 per worker per deployment (2-4 hours at $85/hour). With a proven <strong>5.2x ROI in Year 1</strong>, MODEMO® dramatically reduces admin costs by 20-30%.
                   </p>
                   <p className="text-blue-700 font-semibold">
-                    CrewSpec™ proves you're delivering the exact skilled workforce promised, turning compliance into a competitive advantage.
+                    Smart contractors are using MODEMO® to win more bids with RTW™ guarantees, command premium rates for proven reliability, and build preferred contractor status.
                   </p>
                 </CardContent>
               </Card>
@@ -321,10 +321,10 @@ const LandingPage = () => {
           <Card className="p-8 bg-blue-50 border-blue-200 hover:shadow-xl hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 hover:scale-102">
             <div className="text-center">
               <blockquote className="text-xl text-gray-800 italic mb-4">
-                "MODEMO® transformed our turnaround mobilization. What used to take 3 weeks now happens in 3 days. The ROI was immediate and dramatic."
+                "Day 1 becomes predictable instead of chaotic. Workers arrive ready. Orientation becomes confirmation, not qualification. Productive work begins immediately."
               </blockquote>
-              <div className="text-blue-600 font-bold">Sarah Johnson</div>
-              <div className="text-gray-600">Project Director, Major Refinery</div>
+              <div className="text-blue-600 font-bold">Chemical Plant Manager</div>
+              <div className="text-gray-600">Reduced mobilization time by 40%</div>
             </div>
           </Card>
         </div>
@@ -334,10 +334,10 @@ const LandingPage = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Turn Chaos into Day 1 Readiness?
+            Ready When You Are
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join industry leaders who've transformed their workforce mobilization with MODEMO®.
+            Eliminate contractor mobilization chaos. Get complete visibility of contractor readiness, prevent costly delays, and ensure everyone who shows up can actually work.
           </p>
           <a 
             href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO."
