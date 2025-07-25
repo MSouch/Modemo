@@ -34,7 +34,7 @@ const LandingPage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO."
-                  className="group relative overflow-hidden"
+                  className="group relative overflow-hidden rounded-lg"
                 >
                   <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-green-500/25">
                     <span className="relative z-10 flex items-center">
@@ -82,7 +82,7 @@ const LandingPage = () => {
                 </div>
                 <a 
                   href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to request a demo of MODEMO.%0D%0A%0D%0ACompany: [Your Company]%0D%0AEmail: [Your Email]%0D%0A%0D%0AThank you!"
-                  className="block w-full group relative overflow-hidden"
+                  className="block w-full group relative overflow-hidden rounded-lg"
                 >
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 relative z-10">
                     <span className="relative z-10">Request Demo</span>
@@ -94,6 +94,67 @@ const LandingPage = () => {
                 </p>
               </form>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Three-Step Solution Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl text-gray-900 mb-4">
+              MODEMO®'s Three-Step Solution
+            </h2>
+            <p className="text-xl text-gray-600">
+              Real-time tracking, automated compliance, seamless coordination
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-blue-50 border-2 hover:border-blue-200">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-blue-200 transition-colors duration-300">
+                <Users className="h-10 w-10 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Clear Event Mobilization Checklists</h3>
+              <p className="text-gray-600 mb-6">
+                Create site-specific requirements for each trade. Share them 60-90 days before mobilization (the industry best practice). Include exact documentation standards and timelines. Eliminate the last-minute scrambling that creates bottlenecks.
+              </p>
+              <ul className="text-left space-y-2 text-sm text-gray-600">
+                <li>• Site-specific requirements for each trade</li>
+                <li>• 60-90 days advance sharing</li>
+                <li>• Exact documentation standards</li>
+              </ul>
+            </Card>
+
+            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-green-50 border-2 hover:border-green-200">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-green-200 transition-colors duration-300">
+                <Shield className="h-10 w-10 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Set Crew Standards with CrewSpec™</h3>
+              <p className="text-gray-600 mb-6">
+                Define minimum journeyman-to-apprentice ratios (1:1 to 1:3). Require adequate foreman coverage (1 per 8-12 workers). Lock in certification levels during bidding. Get the A-team you're paying for, not the B-team that shows up.
+              </p>
+              <ul className="text-left space-y-2 text-sm text-gray-600">
+                <li>• Journeyman-to-apprentice ratios (1:1 to 1:3)</li>
+                <li>• Foreman coverage (1 per 8-12 workers)</li>
+                <li>• Lock in certification levels during bidding</li>
+              </ul>
+            </Card>
+
+            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-orange-50 border-2 hover:border-orange-200">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-orange-200 transition-colors duration-300">
+                <Clock className="h-10 w-10 text-orange-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">See Everything with Real-Time Reporting</h3>
+              <p className="text-gray-600 mb-6">
+                Track RTW™ status for every worker before arrival. Verify actual crew composition matches bid promises. Spot which contractors are stuck in orientation versus working. Give security complete qualified contractor lists for 75% faster gate processing.
+              </p>
+              <ul className="text-left space-y-2 text-sm text-gray-600">
+                <li>• Track RTW™ status before arrival</li>
+                <li>• Verify crew composition matches bids</li>
+                <li>• 75% faster gate processing</li>
+              </ul>
+            </Card>
           </div>
         </div>
       </section>
@@ -175,67 +236,6 @@ const LandingPage = () => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Three Pillars Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl text-gray-900 mb-4">
-              MODEMO®'s Three-Step Solution
-            </h2>
-            <p className="text-xl text-gray-600">
-              Real-time tracking, automated compliance, seamless coordination
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-blue-50 border-2 hover:border-blue-200">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-blue-200 transition-colors duration-300">
-                <Users className="h-10 w-10 text-blue-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Clear Event Mobilization Checklists</h3>
-              <p className="text-gray-600 mb-6">
-                Create site-specific requirements for each trade. Share them 60-90 days before mobilization (the industry best practice). Include exact documentation standards and timelines. Eliminate the last-minute scrambling that creates bottlenecks.
-              </p>
-              <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Site-specific requirements for each trade</li>
-                <li>• 60-90 days advance sharing</li>
-                <li>• Exact documentation standards</li>
-              </ul>
-            </Card>
-
-            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-green-50 border-2 hover:border-green-200">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-green-200 transition-colors duration-300">
-                <Shield className="h-10 w-10 text-green-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Set Crew Standards with CrewSpec™</h3>
-              <p className="text-gray-600 mb-6">
-                Define minimum journeyman-to-apprentice ratios (1:1 to 1:3). Require adequate foreman coverage (1 per 8-12 workers). Lock in certification levels during bidding. Get the A-team you're paying for, not the B-team that shows up.
-              </p>
-              <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Journeyman-to-apprentice ratios (1:1 to 1:3)</li>
-                <li>• Foreman coverage (1 per 8-12 workers)</li>
-                <li>• Lock in certification levels during bidding</li>
-              </ul>
-            </Card>
-
-            <Card className="text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 p-8 hover:bg-orange-50 border-2 hover:border-orange-200">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-orange-200 transition-colors duration-300">
-                <Clock className="h-10 w-10 text-orange-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">See Everything with Real-Time Reporting</h3>
-              <p className="text-gray-600 mb-6">
-                Track RTW™ status for every worker before arrival. Verify actual crew composition matches bid promises. Spot which contractors are stuck in orientation versus working. Give security complete qualified contractor lists for 75% faster gate processing.
-              </p>
-              <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Track RTW™ status before arrival</li>
-                <li>• Verify crew composition matches bids</li>
-                <li>• 75% faster gate processing</li>
-              </ul>
             </Card>
           </div>
         </div>
@@ -341,7 +341,7 @@ const LandingPage = () => {
           </p>
           <a 
             href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO."
-            className="group relative inline-block"
+            className="group relative inline-block rounded-lg"
           >
             <Button className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700 px-8 py-3 text-lg rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-white/25 relative z-10">
               <span className="relative z-10 flex items-center">
