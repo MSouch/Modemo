@@ -41,7 +41,7 @@ const LandingPage = () => {
                       Schedule a Demo
                       <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                   </Button>
                 </a>
                 <Button className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-8 py-3 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
@@ -86,7 +86,7 @@ const LandingPage = () => {
                 >
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 relative z-10">
                     <span className="relative z-10">Request Demo</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                   </Button>
                 </a>
                 <p className="text-sm text-gray-500 text-center">
@@ -103,10 +103,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl text-gray-900 mb-4">
-              Why Mobilization Fails (And How to Fix It)
+              Why RTW™ Tracking Benefits Everyone
             </h2>
             <p className="text-xl text-gray-600">
-              Every delay costs thousands. Every compliance issue risks millions.
+              When non-qualified workers arrive at your site, they create a cascade of problems: bottlenecks at security gates, frustrated skilled workers waiting in line, administrative chaos, and significant productivity losses.
             </p>
           </div>
 
@@ -122,8 +122,8 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">25% Unqualified Workers</h4>
-                    <p className="text-red-700">Industry data shows 1 in 4 workers arrive with qualification issues, creating chaos</p>
+                    <h4 className="font-bold text-red-800">25% Workers Have Issues</h4>
+                    <p className="text-red-700">Industry data shows that 25% of workers typically have qualification issues on arrival</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -131,8 +131,8 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">2-4 Hours Unbillable Time</h4>
-                    <p className="text-red-700">Workers wait for qualification verification instead of producing revenue</p>
+                    <h4 className="font-bold text-red-800">Gate Bottlenecks</h4>
+                    <p className="text-red-700">Bottlenecks at security gates, frustrated skilled workers waiting in line</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -140,8 +140,8 @@ const LandingPage = () => {
                     <span className="text-red-800 text-sm">!</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-red-800">Million-Dollar Daily Losses</h4>
-                    <p className="text-red-700">Production delays cost $1-3 million per day during STO events</p>
+                    <h4 className="font-bold text-red-800">Administrative Chaos</h4>
+                    <p className="text-red-700">Administrative chaos and significant productivity losses</p>
                   </div>
                 </div>
               </div>
@@ -156,22 +156,22 @@ const LandingPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">Immediate Billing & RTW™ Status</h4>
-                    <p className="text-green-700">Workers are productive and billable from their first hour on site</p>
+                    <h4 className="font-bold text-green-800">RTW™ System</h4>
+                    <p className="text-green-700">MODEMO®'s transparent RTW™ system ensures only fully qualified personnel reach your gates</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="font-bold text-green-800">CrewSpec™ Verification</h4>
-                    <p className="text-green-700">Prove you're delivering the exact skilled workforce promised in your bid</p>
+                    <p className="text-green-700">Combined with CrewSpec™ verification, ensures proper crew composition with the right mix of journeymen, apprentices, and foremen</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-green-800">Exponential ROI</h4>
-                    <p className="text-green-700">Save one hour ($42K-125K) and pay for months—save one day and multiply returns</p>
+                    <h4 className="font-bold text-green-800">Eliminate Disruptions</h4>
+                    <p className="text-green-700">Eliminating costly disruptions and building stronger, more efficient working relationships</p>
                   </div>
                 </div>
               </CardContent>
@@ -199,12 +199,12 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">RTW™ Tracking</h3>
               <p className="text-gray-600 mb-6">
-                RTW™ certification means a worker has completed every requirement necessary to begin productive work immediately upon site arrival. This game-changing status eliminates costly delays that occur when workers show up unprepared.
+                Understanding Ready-to-Work (RTW™) Status: RTW™ certification means a worker has completed every requirement necessary to begin productive work immediately upon site arrival. This game-changing status eliminates the costly delays that occur when workers show up unprepared.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Live crew status dashboard</li>
-                <li>• 30-day certification expiry alerts</li>
-                <li>• Immediate productivity on arrival</li>
+                <li>• Owners define specific requirements upfront</li>
+                <li>• 30-day advance warnings before credentials expire</li>
+                <li>• Continuous RTW™ status throughout project</li>
               </ul>
             </Card>
 
@@ -214,12 +214,12 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">CrewSpec™ Standards</h3>
               <p className="text-gray-600 mb-6">
-                Ensure contractors deliver the exact skilled workforce promised in your bid. Proper journeyman-to-apprentice ratios, adequate foreman coverage, and verified crew composition turn compliance into competitive advantage.
+                Combined with CrewSpec™ verification, owners can ensure not just individual qualifications, but proper crew composition with the right mix of journeymen, apprentices, and foremen for safe, efficient operations.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Verified crew composition</li>
-                <li>• Journeyman ratio compliance</li>
-                <li>• Foreman coverage validation</li>
+                <li>• Proper crew composition verification</li>
+                <li>• Right mix of skilled workers</li>
+                <li>• Safe, efficient operations</li>
               </ul>
             </Card>
 
@@ -229,12 +229,12 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Gate Acceleration</h3>
               <p className="text-gray-600 mb-6">
-                Industry data shows 25% of workers typically have qualification issues on arrival. MODEMO®'s transparent RTW™ system ensures only fully qualified personnel reach your gates, eliminating costly disruptions.
+                Only Ready To Work workers should arrive at the site. All others add cost, chaos, frustration, and slow down the flow of RTW workers into the site. Transparent RTW requirements, fulfillment, tracking and streamlining is a money saver to both Owner and Contractor.
               </p>
               <ul className="text-left space-y-2 text-sm text-gray-600">
-                <li>• Pre-validated workforce</li>
-                <li>• Eliminate gate bottlenecks</li>
-                <li>• Zero qualification delays</li>
+                <li>• Only RTW™ workers arrive at site</li>
+                <li>• Transparent requirements</li>
+                <li>• Money saver for both parties</li>
               </ul>
             </Card>
           </div>
@@ -256,19 +256,19 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
               <div className="text-4xl font-bold text-green-600 mb-2">$1M+</div>
-              <p className="text-gray-600">Saved Per STO Event</p>
+              <p className="text-gray-600">Saved on STO Events</p>
             </div>
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
               <div className="text-4xl font-bold text-blue-600 mb-2">5.7x</div>
-              <p className="text-gray-600">Proven ROI</p>
+              <p className="text-gray-600">Return on Investment</p>
             </div>
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
-              <div className="text-4xl font-bold text-purple-600 mb-2">$17</div>
-              <p className="text-gray-600">Daily Cost</p>
+              <div className="text-4xl font-bold text-purple-600 mb-2">25%</div>
+              <p className="text-gray-600">Workers Have Issues</p>
             </div>
             <div className="text-center hover:transform hover:scale-110 transition-all duration-300">
               <div className="text-4xl font-bold text-orange-600 mb-2">RTW™</div>
-              <p className="text-gray-600">Workers Ready Day 1</p>
+              <p className="text-gray-600">Ready-to-Work Status</p>
             </div>
           </div>
 
