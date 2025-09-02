@@ -1,220 +1,91 @@
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { CheckCircle, Users, Shield, Clock, ArrowRight, List } from "lucide-react";
+import { ArrowRight, Users, Shield, List, CheckCircle, Zap, ClipboardList } from "lucide-react";
 
 const HowItWorksPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 to-blue-100 py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="inline-block">
-              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                HOW IT WORKS
-              </span>
-            </div>
-            <h1 className="text-4xl lg:text-5xl text-gray-900 leading-tight mt-4 mb-6">
-              The MODEMO® Process
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              From chaos to clarity in three proven steps. See how MODEMO® transforms workforce mobilization.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Three Pillars - Detailed */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
-            {/* Step 1 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white text-xl font-bold">1</span>
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900">Create Site-Specific Checklists</h2>
-                </div>
-                <p className="text-lg text-gray-600 mb-6">
-                  Eliminate confusion with clear documentation, deadlines, and contact information tailored to your specific site requirements.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Custom checklist templates for different job types</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Automated deadline tracking and notifications</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Contact directory with roles and responsibilities</span>
-                  </li>
-                </ul>
-              </div>
-              <Card className="p-8 border-blue-200 bg-blue-50">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <List className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-center text-blue-800 mb-4">Checklist Management</h3>
-                <p className="text-blue-700 text-center">
-                  Dynamic, intelligent checklists that adapt to your project requirements and ensure nothing falls through the cracks.
-                </p>
-              </Card>
-            </div>
-
-            {/* Step 2 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <Card className="p-8 border-green-200 bg-green-50 lg:order-1">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-8 w-8 text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold text-center text-green-800 mb-4">CrewSpec™ Standards</h3>
-                <p className="text-green-700 text-center">
-                  Intelligent crew composition analysis ensuring proper journeyman ratios and foreman coverage for optimal safety and productivity.
-                </p>
-              </Card>
-              <div className="lg:order-2">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white text-xl font-bold">2</span>
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900">Enforce Crew Standards</h2>
-                </div>
-                <p className="text-lg text-gray-600 mb-6">
-                  CrewSpec™ ensures proper journeyman ratios and foreman coverage, maintaining quality and safety standards across all crews.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Automated crew composition validation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Skills matrix and certification tracking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Real-time crew quality scoring</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white text-xl font-bold">3</span>
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900">Track RTW™ Status</h2>
-                </div>
-                <p className="text-lg text-gray-600 mb-6">
-                  Know exactly who is qualified, cleared, and ready—before Day 1. Real-time Ready-to-Work™ visibility eliminates surprises.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-orange-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Real-time workforce readiness dashboard</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-orange-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Certification expiration monitoring</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-orange-600 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Predictive analytics for mobilization timing</span>
-                  </li>
-                </ul>
-              </div>
-              <Card className="p-8 border-orange-200 bg-orange-50">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Shield className="h-8 w-8 text-orange-600" />
-                </div>
-                <h3 className="text-xl font-bold text-center text-orange-800 mb-4">RTW™ Dashboard</h3>
-                <p className="text-orange-700 text-center mb-4">
-                  Comprehensive readiness tracking with predictive insights for optimal mobilization timing.
-                </p>
-                <div className="text-sm text-orange-800 font-medium bg-orange-100 p-3 rounded-lg">
-                  RTW™ = Ready-to-Work Status
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Implementation Timeline */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl text-gray-900 mb-4">
-              Implementation Timeline
-            </h2>
-            <p className="text-xl text-gray-600">
-              From setup to full deployment in record time
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Week 1</h3>
-              <p className="text-gray-600">Initial setup and configuration</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Week 2</h3>
-              <p className="text-gray-600">Team training and onboarding</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Week 3</h3>
-              <p className="text-gray-600">Pilot testing and refinement</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Week 4</h3>
-              <p className="text-gray-600">Full deployment and go-live</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            See MODEMO® in Action
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Watch our 90-second overview or schedule a personalized demo to see how it works for your operations.
+      {/* Single Hero Section */}
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-white py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
+          <h1 className="text-6xl lg:text-7xl text-gray-900 font-bold leading-tight mb-12">
+            How It Works
+          </h1>
+          
+          <p className="text-3xl text-gray-700 mb-16 leading-relaxed">
+            Three simple steps to eliminate mobilization chaos
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-lg">
-              Watch 90-Second Overview
+
+          {/* Three Steps - Ultra Simple */}
+          <div className="grid md:grid-cols-3 gap-12 mb-16">
+            <div className="text-center">
+              <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <List className="h-12 w-12 text-blue-600" />
+              </div>
+              <h3 className="text-3xl font-bold text-blue-900 mb-4">1. GatePass™</h3>
+              <p className="text-xl text-gray-600">Verify credentials before arrival</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="h-12 w-12 text-green-600" />
+              </div>
+              <h3 className="text-3xl font-bold text-green-900 mb-4">2. CrewSpec™</h3>
+              <p className="text-xl text-gray-600">Get the skilled crews you paid for</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="h-12 w-12 text-orange-600" />
+              </div>
+              <h3 className="text-3xl font-bold text-orange-900 mb-4">3. RTW™</h3>
+              <p className="text-xl text-gray-600">Know who's ready before they arrive</p>
+            </div>
+          </div>
+
+          {/* Single CTA */}
+          <a 
+            href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to see how MODEMO works for our facility."
+            className="group inline-block"
+          >
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-12 py-6 rounded-lg text-2xl font-bold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <span className="flex items-center">
+                See It In Action
+                <ArrowRight className="ml-4 h-7 w-7 transform group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
             </Button>
-            <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO.">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg rounded-lg">
-                Schedule a Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </a>
+          </a>
+          
+          <p className="text-xl text-gray-500 mt-6">
+            15-minute demo • Same-day setup
+          </p>
+        </div>
+      </section>
+      {/* Compact Features */}
+      <section className="py-20 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <CheckCircle className="h-6 w-6 text-green-600" />
+                <h3 className="text-lg font-semibold">Standardize Entry</h3>
+              </div>
+              <p className="text-gray-600">One clear, pre-verified checklist for every worker and craft.</p>
+            </div>
+            <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <Zap className="h-6 w-6 text-blue-600" />
+                <h3 className="text-lg font-semibold">Accelerate the Gate</h3>
+              </div>
+              <p className="text-gray-600">Cut wait times by moving compliance upstream with GatePass™.</p>
+            </div>
+            <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <ClipboardList className="h-6 w-6 text-orange-600" />
+                <h3 className="text-lg font-semibold">Prove Readiness</h3>
+              </div>
+              <p className="text-gray-600">RTW™ shows who’s qualified and available before Day 1.</p>
+            </div>
           </div>
         </div>
       </section>
