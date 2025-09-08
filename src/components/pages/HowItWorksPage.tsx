@@ -61,36 +61,72 @@ const HowItWorksPage = () => {
           </p>
         </div>
       </section>
-      {/* Go-live timeline (prominent) */}
-      <section className="py-24 bg-gray-50 border-y border-gray-200">
+      {/* Go-live comparison redesigned */}
+      <section className="py-28 bg-gray-50 border-y border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <div className="inline-block mb-3">
-              <span className="px-3 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-800">Mobilize Fast</span>
+          <div className="flex flex-col items-center text-center mb-16">
+            <span className="px-3 py-1 rounded-full text-[11px] tracking-wider font-semibold bg-green-100 text-green-700 uppercase">Mobilize Fast</span>
+            <h2 className="mt-6 text-5xl font-extrabold tracking-tight text-gray-900">Go Live In Minutes</h2>
+            <p className="mt-3 text-base md:text-lg text-gray-600">Traditional procurement vs the MODEMO activation path</p>
+            <div className="mt-8 grid gap-4 w-full md:grid-cols-4">
+              <div className="bg-white border border-gray-200 rounded-xl px-4 py-3 flex flex-col items-start shadow-sm"><strong className="text-lg">3–6 months</strong><span className="text-[11px] tracking-wider font-semibold text-gray-500">Traditional</span></div>
+              <div className="bg-white border border-green-300 rounded-xl px-4 py-3 flex flex-col items-start shadow-sm"><strong className="text-lg">30 minutes</strong><span className="text-[11px] tracking-wider font-semibold text-green-600">MODEMO</span></div>
+              <div className="bg-white border border-gray-200 rounded-xl px-4 py-3 flex flex-col items-start shadow-sm"><strong className="text-lg">0 IT hours</strong><span className="text-[11px] tracking-wider font-semibold text-gray-500">Setup</span></div>
+              <div className="bg-white border border-gray-200 rounded-xl px-4 py-3 flex flex-col items-start shadow-sm md:col-span-1"><strong className="text-lg">Instant</strong><span className="text-[11px] tracking-wider font-semibold text-gray-500">Visibility</span></div>
             </div>
-            <h2 className="text-4xl font-extrabold text-gray-900">Go live in minutes</h2>
-            <p className="text-lg text-gray-600 mt-2">MODEMO vs Traditional</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-stretch">
-            <div className="p-8 bg-white rounded-2xl border border-gray-200 shadow-sm border-l-4 border-gray-300">
-              <h3 className="text-3xl font-bold text-gray-900 mb-1">Traditional systems</h3>
-              <p className="text-sm text-gray-500 mb-6">3–6 months</p>
-              <ul className="space-y-3 text-gray-700 text-lg leading-relaxed">
-                <li className="flex items-start gap-3"><CheckCircle className="h-6 w-6 text-gray-400 mt-1" /> <span className="font-semibold">Month 1:</span>&nbsp;Procurement process • Vendor evaluation • Budget approval</li>
-                <li className="flex items-start gap-3"><CheckCircle className="h-6 w-6 text-gray-400 mt-1" /> <span className="font-semibold">Month 2:</span>&nbsp;IT integration • Security review • Network setup</li>
-                <li className="flex items-start gap-3"><CheckCircle className="h-6 w-6 text-gray-400 mt-1" /> <span className="font-semibold">Month 3:</span>&nbsp;System setup • Database config • Testing</li>
-                <li className="flex items-start gap-3"><CheckCircle className="h-6 w-6 text-gray-400 mt-1" /> <span className="font-semibold">Months 4–6:</span>&nbsp;Training & development • User training • Go‑live support</li>
-              </ul>
+
+          <div className="relative grid gap-20 lg:gap-28 lg:grid-cols-2">
+            {/* Traditional timeline */}
+            <div className="relative">
+              <div className="absolute left-4 top-0 bottom-0 w-[3px] bg-gray-200 rounded" />
+              <div className="mb-10"><span className="inline-block text-[11px] tracking-wider font-semibold text-gray-500 bg-white border border-gray-200 px-3 py-1 rounded-full shadow-sm">TRADITIONAL</span></div>
+              {[
+                { label: 'MONTH 1', title: 'Procurement & Approvals', body: 'Vendor evaluation, security questionnaires, budget alignment, contract cycles begin.' },
+                { label: 'MONTH 2', title: 'IT Integration Prep', body: 'Access provisioning, network design, identity mapping, policy reviews, internal prioritization delays.' },
+                { label: 'MONTH 3', title: 'System Configuration', body: 'Environment build, database setup, custom forms, staging validation, change tickets.' },
+                { label: 'MONTHS 4–6', title: 'Training & Rollout', body: 'User enablement, staggered onboarding, remediation cycles, post‑go‑live support ramp.' },
+              ].map((step) => (
+                <div key={step.label} className="relative pl-12 pb-12 last:pb-0 group">
+                  <span className="absolute left-[0.5rem] top-1 w-6 h-6 rounded-full border-4 border-gray-300 bg-white shadow ring-4 ring-white transition-transform duration-300 group-hover:scale-110" />
+                  <div className="mb-1 flex items-center gap-2">
+                    <span className="text-[10px] font-semibold tracking-wider text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">{step.label}</span>
+                    <h4 className="m-0 text-base font-bold text-gray-900">{step.title}</h4>
+                  </div>
+                  <p className="m-0 text-sm text-gray-600 leading-relaxed">{step.body}</p>
+                </div>
+              ))}
+              <div className="mt-6 p-5 rounded-xl bg-gradient-to-br from-gray-700 to-gray-600 text-white shadow flex flex-col gap-1">
+                <h5 className="m-0 text-sm font-semibold tracking-wide">Risk Window Persists</h5>
+                <p className="m-0 text-xs opacity-90">Gate inefficiencies & visibility gaps remain until full adoption.</p>
+              </div>
             </div>
-            <div className="p-8 bg-white rounded-2xl border border-gray-200 shadow-sm border-l-4 border-green-300">
-              <h3 className="text-3xl font-bold text-gray-900 mb-1">MODEMO</h3>
-              <p className="text-sm text-gray-500 mb-6">Live in 30 minutes. Protected forever.</p>
-              <ul className="space-y-3 text-gray-700 text-lg leading-relaxed">
-                <li className="flex items-start gap-3"><CheckCircle className="h-6 w-6 text-green-600 mt-1" /> <span className="font-semibold">0–10 minutes:</span>&nbsp;Credit card sign‑up • Instant access • No procurement</li>
-                <li className="flex items-start gap-3"><CheckCircle className="h-6 w-6 text-green-600 mt-1" /> <span className="font-semibold">10–20 minutes:</span>&nbsp;Configure requirements • Set checklists • Add contractors</li>
-                <li className="flex items-start gap-3"><CheckCircle className="h-6 w-6 text-green-600 mt-1" /> <span className="font-semibold">20–30 minutes:</span>&nbsp;Live and protected • Start tracking • Full visibility</li>
-              </ul>
-              <p className="text-gray-500 text-sm mt-5">No IT required. Cloud‑based. Instant setup. Simple to use.</p>
+            {/* MODEMO timeline */}
+            <div className="relative">
+              <div className="absolute left-4 top-0 bottom-0 w-[3px] bg-green-200 rounded" />
+              <div className="mb-10"><span className="inline-block text-[11px] tracking-wider font-semibold text-green-700 bg-white border border-green-200 px-3 py-1 rounded-full shadow-sm">MODEMO</span></div>
+              {[
+                { label: '0–10 MIN', title: 'Instant Sign‑Up', body: 'Credit card access – no procurement cycle. Platform live immediately.' },
+                { label: '10–20 MIN', title: 'Configure Requirements', body: 'Define checklists, crafts, entry criteria. Align stakeholders quickly.' },
+                { label: '20–30 MIN', title: 'Activate & Invite', body: 'Contractors onboard; RTW status begins populating. Visibility before arrival.' },
+              ].map(step => (
+                <div key={step.label} className="relative pl-12 pb-12 last:pb-0 group">
+                  <span className="absolute left-[0.5rem] top-1 w-6 h-6 rounded-full border-4 border-green-600 bg-white shadow ring-4 ring-white transition-transform duration-300 group-hover:scale-110" />
+                  <div className="mb-1 flex items-center gap-2">
+                    <span className="text-[10px] font-semibold tracking-wider text-green-700 bg-green-100 px-2 py-0.5 rounded-full">{step.label}</span>
+                    <h4 className="m-0 text-base font-bold text-gray-900">{step.title}</h4>
+                  </div>
+                  <p className="m-0 text-sm text-gray-600 leading-relaxed">{step.body}</p>
+                </div>
+              ))}
+              <div className="mt-6 p-5 rounded-xl bg-gradient-to-br from-green-600 to-blue-600 text-white shadow flex flex-col gap-1">
+                <h5 className="m-0 text-sm font-semibold tracking-wide">Protected From Minute 30</h5>
+                <p className="m-0 text-xs opacity-90">Gate delays reduced; upstream verification flowing; continuous compliance tracking.</p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-5 text-[11px] font-medium tracking-wide text-gray-600">
+                <span className="flex items-center gap-2"><span className="w-3.5 h-3.5 rounded bg-gray-300" /> Traditional milestone</span>
+                <span className="flex items-center gap-2"><span className="w-3.5 h-3.5 rounded bg-green-600" /> MODEMO milestone</span>
+              </div>
             </div>
           </div>
         </div>

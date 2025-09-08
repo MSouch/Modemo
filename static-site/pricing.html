@@ -6,18 +6,36 @@
 </head><body>
 <header class="site-header"><div class="wrapper flex justify-between items-center" style="height:64px;"><a href="index.html"><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" /></a><nav class="nav flex items-center space-x-8"><a data-nav href="solutions.html">Solutions</a><a data-nav href="how-it-works.html">How It Works</a><a data-nav href="key-benefits.html">Key Benefits</a><a data-nav href="pricing.html">Inquire</a><a data-nav href="#" style="color:var(--blue-600);">Sign In</a></nav><a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO." class="button button-md button-green rounded-lg" style="margin-left:1.5rem;">Schedule a Demo</a></div></header>
 <main>
-  <section class="hero" style="min-height:100vh; background:linear-gradient(to bottom right,var(--blue-50),#fff);">
-    <div class="wrapper text-center" style="max-width:900px;">
-      <h1 class="text-6xl leading-tight font-bold mb-12">Inquire About Access</h1>
-      <p class="text-3xl text-gray-700 mb-16 leading-relaxed">Value-based access tailored to owners and contractors</p>
-      <div class="card rounded-2xl mb-12" style="max-width:620px; margin:0 auto; text-align:left;">
-        <h3 class="text-3xl font-bold text-gray-900 mb-4">Pricing varies</h3>
-        <ul style="list-style:none; padding:0; margin:0;" class="text-xl text-gray-700">
-          <li class="flex gap-3 mb-3"><span class="text-green-600">✅</span><span>Value scales with your mobilization needs</span></li>
-          <li class="flex gap-3"><span class="text-green-600">✅</span><span>Owner and contractor access differ by role</span></li>
-        </ul>
+  <section class="mini-hero">
+    <div class="wrapper" style="max-width:860px;">
+      <div class="text-center">
+        <h1>Inquire About Access</h1>
+        <p class="lead">Tell us who you are and what you need. We'll respond quickly.</p>
       </div>
-      <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Access & Value Inquiry&body=Hello, I would like to inquire about MODEMO access and understand the value for our organization." class="button button-lg button-blue rounded-xl shadow" style="font-weight:600; font-size:1.15rem;">Request Access & Value Overview</a>
+      <form id="accessInquiryForm" class="form-panel" style="margin:2.5rem auto 0; max-width:640px;">
+        <div class="grid" style="gap:1.25rem;">
+          <div>
+            <label for="inq-name" class="text-sm font-semibold text-gray-600" style="display:block; margin-bottom:.4rem;">Name</label>
+            <input id="inq-name" name="name" type="text" required class="input" placeholder="Your full name" />
+          </div>
+          <div>
+            <label for="inq-company" class="text-sm font-semibold text-gray-600" style="display:block; margin-bottom:.4rem;">Company</label>
+            <input id="inq-company" name="company" type="text" required class="input" placeholder="Company / Organization" />
+          </div>
+          <div>
+            <label for="inq-email" class="text-sm font-semibold text-gray-600" style="display:block; margin-bottom:.4rem;">Email</label>
+            <input id="inq-email" name="email" type="email" required class="input" placeholder="name@company.com" />
+          </div>
+          <div>
+            <label for="inq-message" class="text-sm font-semibold text-gray-600" style="display:block; margin-bottom:.4rem;">Message / Context</label>
+            <textarea id="inq-message" name="message" rows="5" class="input" style="resize:vertical;" placeholder="Briefly describe your mobilization or demobilization needs" required></textarea>
+          </div>
+          <div class="flex items-center" style="justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+            <div class="text-sm text-gray-500">No long sales cycle. Just a fast response.</div>
+            <button type="submit" class="button button-green button-md rounded-lg" style="font-weight:600;">Send Inquiry →</button>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 </main>
