@@ -4,8 +4,7 @@ import Footer from "./components/shared/Footer";
 import LandingPage from "./components/pages/LandingPage";
 import SolutionsPage from "./components/pages/SolutionsPage";
 import HowItWorksPage from "./components/pages/HowItWorksPage";
-import IndustriesPage from "./components/pages/IndustriesPage";
-import ResourcesPage from "./components/pages/ResourcesPage";
+import KeyBenefitsPage from "./components/pages/KeyBenefitsPage";
 import PricingPage from "./components/pages/PricingPage";
 
 export default function App() {
@@ -19,8 +18,7 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/industries" element={<IndustriesPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/key-benefits" element={<KeyBenefitsPage />} />
           <Route path="/pricing" element={<PricingPage />} />
         </Routes>
         <Footer />

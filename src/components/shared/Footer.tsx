@@ -25,21 +25,26 @@ const Footer = () => {
 
           {/* Solutions */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Solutions</h3>
+            <h3 className="text-lg font-bold mb-4">Explore</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link to="/solutions" className="hover:text-white transition-colors">
-                  For Owner-Operators
+                  Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-white transition-colors">
-                  For Contractors
+                <Link to="/how-it-works" className="hover:text-white transition-colors">
+                  How It Works
                 </Link>
               </li>
               <li>
-                <Link to="/industries" className="hover:text-white transition-colors">
-                  Industry Applications
+                <Link to="/key-benefits" className="hover:text-white transition-colors">
+                  Key Benefits
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="hover:text-white transition-colors">
+                  Inquire
                 </Link>
               </li>
             </ul>
@@ -51,54 +56,39 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link to="/how-it-works" className="hover:text-white transition-colors">
-                  RTW™ Tracking
+                  GatePass
                 </Link>
               </li>
               <li>
                 <Link to="/how-it-works" className="hover:text-white transition-colors">
-                  CrewSpec™ Standards
+                  CrewSpec
                 </Link>
               </li>
               <li>
                 <Link to="/how-it-works" className="hover:text-white transition-colors">
-                  Gate Acceleration
+                  RTW
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="hover:text-white transition-colors">
-                  Pricing
+                <Link to="/key-benefits" className="hover:text-white transition-colors">
+                  ExitList
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Resources</h3>
+            <h3 className="text-lg font-bold mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <Link to="/resources" className="hover:text-white transition-colors">
-                  White Papers
-                </Link>
-              </li>
-              <li>
-                <Link to="/resources" className="hover:text-white transition-colors">
-                  Best Practices
-                </Link>
-              </li>
-              <li>
-                <Link to="/resources" className="hover:text-white transition-colors">
-                  Implementation Guides
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Support
+                <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Inquiry" className="hover:text-white transition-colors">
+                  Email Us
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Contact Us
+                  Support
                 </a>
               </li>
             </ul>
@@ -113,7 +103,7 @@ const Footer = () => {
             <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
           </div>
           <div className="mt-4 md:mt-0 text-gray-400 text-sm">
-            Built for industrial workforce mobilization excellence
+            Mobilization & Demobilization platform for industrial events
           </div>
         </div>
       </div>

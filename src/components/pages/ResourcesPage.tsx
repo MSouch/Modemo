@@ -39,9 +39,9 @@ const ResourcesPage = () => {
 								<CardTitle className="text-2xl">Short Demos</CardTitle>
 							</CardHeader>
 							<CardContent className="text-gray-600 space-y-2">
-								<p>GatePass™ in 2 minutes</p>
-								<p>CrewSpec™ skill assurance</p>
-								<p>RTW™ readiness overview</p>
+								<p>GatePass in 2 minutes</p>
+								<p>CrewSpec skill assurance</p>
+								<p>RTW readiness overview</p>
 							</CardContent>
 						</Card>
 

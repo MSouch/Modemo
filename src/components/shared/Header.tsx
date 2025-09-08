@@ -9,11 +9,10 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/solutions", label: "Solutions" },
-    { path: "/how-it-works", label: "How It Works" },
-    { path: "/industries", label: "Industries" },
-    { path: "/resources", label: "Resources" },
-    { path: "/pricing", label: "Pricing" },
+  { path: "/solutions", label: "Solutions" },
+  { path: "/how-it-works", label: "How It Works" },
+  { path: "/key-benefits", label: "Key Benefits" },
+  { path: "/pricing", label: "Inquire" },
   ];
 
   return (

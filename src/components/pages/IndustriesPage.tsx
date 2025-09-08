@@ -19,17 +19,17 @@ const IndustriesPage = () => {
 			<section className="py-16 bg-white">
 				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid md:grid-cols-3 gap-8">
-						<Card className="hover:shadow-md transition-shadow">
-							<CardHeader>
-								<div className="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center mb-3">
-									<Droplets className="h-7 w-7 text-orange-600" />
-								</div>
+							<Card className="hover:shadow-md transition-shadow">
+								<CardHeader>
+									<div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+										<Droplets className="h-7 w-7 text-blue-600" />
+									</div>
 								<CardTitle className="text-2xl">Oil & Gas</CardTitle>
 							</CardHeader>
 							<CardContent className="text-gray-600 space-y-2">
 								<p>Refineries, petrochem, midstream</p>
-								<p className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-4 w-4 text-green-600" /> GatePass™ to cut gate queues</p>
-								<p className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-4 w-4 text-green-600" /> RTW™ to prove readiness</p>
+								<p className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-4 w-4 text-green-600" /> GatePass to cut gate queues</p>
+								<p className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-4 w-4 text-green-600" /> RTW to prove readiness</p>
 							</CardContent>
 						</Card>
 
@@ -42,16 +42,16 @@ const IndustriesPage = () => {
 							</CardHeader>
 							<CardContent className="text-gray-600 space-y-2">
 								<p>Chemicals, heavy industry, discrete</p>
-								<p className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-4 w-4 text-green-600" /> CrewSpec™ for skills assurance</p>
+								<p className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-4 w-4 text-green-600" /> CrewSpec for skills assurance</p>
 								<p className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-4 w-4 text-green-600" /> Faster on-boarding at the gate</p>
 							</CardContent>
 						</Card>
 
-						<Card className="hover:shadow-md transition-shadow">
-							<CardHeader>
-								<div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-3">
-									<Zap className="h-7 w-7 text-green-600" />
-								</div>
+							<Card className="hover:shadow-md transition-shadow">
+								<CardHeader>
+									<div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-3">
+										<Zap className="h-7 w-7 text-green-600" />
+									</div>
 								<CardTitle className="text-2xl">Power</CardTitle>
 							</CardHeader>
 							<CardContent className="text-gray-600 space-y-2">
@@ -73,11 +73,11 @@ const IndustriesPage = () => {
 							<div className="text-gray-700 flex items-center justify-center gap-2"><Clock className="h-5 w-5 text-blue-600" />Faster gate processing</div>
 						</div>
 						<div>
-							<div className="text-4xl font-bold text-emerald-600 mb-1">5.2x</div>
-							<div className="text-gray-700 flex items-center justify-center gap-2"><DollarSign className="h-5 w-5 text-emerald-600" />Contractor ROI year one</div>
+							<div className="text-4xl font-bold text-green-600 mb-1">5.2x</div>
+							<div className="text-gray-700 flex items-center justify-center gap-2"><DollarSign className="h-5 w-5 text-green-600" />Contractor ROI year one</div>
 						</div>
 						<div>
-							<div className="text-4xl font-bold text-purple-600 mb-1">24 hrs</div>
+							<div className="text-4xl font-bold text-blue-600 mb-1">24 hrs</div>
 							<div className="text-gray-700">Typical setup time</div>
 						</div>
 					</div>

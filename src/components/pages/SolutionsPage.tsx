@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { ArrowRight, Shield, Users, CheckCircle2, Clock, DollarSign } from "lucide-react";
+import { ArrowRight, Shield, Users, CheckCircle2, Clock } from "lucide-react";
 
 const SolutionsPage = () => {
   return (
@@ -13,7 +13,7 @@ const SolutionsPage = () => {
           </h1>
           
           <p className="text-3xl text-gray-700 mb-16 leading-relaxed">
-            Triple Protection™ for every mobilization scenario
+            Triple Protection for every mobilization scenario
           </p>
 
           {/* Two Solutions - Ultra Simple */}
@@ -23,8 +23,8 @@ const SolutionsPage = () => {
                 <Shield className="h-16 w-16 text-blue-600" />
               </div>
               <h3 className="text-4xl font-bold text-blue-900 mb-6">For Owners</h3>
-              <p className="text-2xl text-gray-600 mb-4">Prevent million-dollar delays</p>
-              <p className="text-xl text-gray-500">Less than $17/day</p>
+              <p className="text-2xl text-gray-600 mb-4">Prevent gate delays and rework</p>
+              <p className="text-xl text-gray-500">Clear requirements. Clear visibility.</p>
             </div>
 
             <div className="text-center">
@@ -32,8 +32,8 @@ const SolutionsPage = () => {
                 <Users className="h-16 w-16 text-green-600" />
               </div>
               <h3 className="text-4xl font-bold text-green-900 mb-6">For Contractors</h3>
-              <p className="text-2xl text-gray-600 mb-4">5.2x ROI in Year 1</p>
-              <p className="text-xl text-gray-500">Bill from hour one</p>
+              <p className="text-2xl text-gray-600 mb-4">Arrive ready and start faster</p>
+              <p className="text-xl text-gray-500">Fewer holds. Fewer callbacks.</p>
             </div>
           </div>
 
@@ -62,17 +62,17 @@ const SolutionsPage = () => {
             <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Owner-Operators</h3>
               <ul className="space-y-3 text-gray-700">
-                <li className="flex items-center gap-3"><Clock className="h-5 w-5 text-blue-600" /> 75% fewer gate delays</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-green-600" /> RTW™ verified before arrival</li>
-                <li className="flex items-center gap-3"><DollarSign className="h-5 w-5 text-emerald-600" /> Prevent $1–3M/day overruns</li>
+                <li className="flex items-center gap-3"><Clock className="h-5 w-5 text-blue-600" /> Fewer gate delays</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-green-600" /> RTW verified before arrival</li>
+                <li className="flex items-center gap-3"><Shield className="h-5 w-5 text-green-600" /> Better safety and compliance</li>
               </ul>
             </div>
             <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Contractors</h3>
               <ul className="space-y-3 text-gray-700">
-                <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-green-600" /> CrewSpec™ proves qualifications</li>
-                <li className="flex items-center gap-3"><Clock className="h-5 w-5 text-blue-600" /> Bill from hour one</li>
-                <li className="flex items-center gap-3"><DollarSign className="h-5 w-5 text-emerald-600" /> 5.2x ROI in year one</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-green-600" /> CrewSpec proves qualifications</li>
+                <li className="flex items-center gap-3"><Clock className="h-5 w-5 text-blue-600" /> Start faster with fewer holds</li>
+                <li className="flex items-center gap-3"><Shield className="h-5 w-5 text-green-600" /> Fewer callbacks and rework</li>
               </ul>
             </div>
           </div>
