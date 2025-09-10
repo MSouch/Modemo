@@ -133,7 +133,7 @@ header.site-header.scrolled .nav a:hover {
 /* Sections */
 .hero { min-height:100vh; display:flex; align-items:center; background:linear-gradient(to bottom right,var(--blue-50),#ffffff); background:linear-gradient(to bottom right,#eff6ff,#ffffff); padding:6rem 0 2rem; }
 .hero.hero-visual { position:relative; overflow:hidden; background:#475569; background:linear-gradient(135deg, #475569 0%, #64748b 100%); }
-.hero-visual:before { content:""; position:absolute; inset:0; top:0; left:0; right:0; bottom:0; background:linear-gradient(125deg, rgba(71,85,105,.2) 0%, rgba(148,163,184,.15) 35%, transparent 65%); }
+.hero-visual:before { content:""; position:absolute; inset:0; top:0; left:0; right:0; bottom:0; background:#111827; }
 .hero-visual:after { content:""; position:absolute; inset:0; top:0; left:0; right:0; bottom:0; background:linear-gradient(to bottom right, rgba(255,255,255,.1), rgba(255,255,255,.2)); pointer-events:none; }
 .hero-grid-overlay { position:absolute; inset:0; top:0; left:0; right:0; bottom:0; background-image:linear-gradient(rgba(71,85,105,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(71,85,105,.12) 1px, transparent 1px); background-size:48px 48px; opacity:.6; pointer-events:none; }
 .hero-blur-accent { position:absolute; width:480px; height:480px; top:-120px; right:-120px; background:radial-gradient(circle at 35% 35%, rgba(37,99,235,.2), transparent 70%); background:radial-gradient(circle, rgba(37,99,235,.2), transparent); filter:blur(40px); opacity:.4; pointer-events:none; }
@@ -169,7 +169,7 @@ header.site-header.scrolled .nav a:hover {
 .input { width:100%; border:1px solid var(--gray-300); border-radius:0.5rem; padding:0.75rem 0.9rem; font-size:1rem; font-family:inherit; }
 .input:focus { outline:2px solid var(--blue-600); border-color:var(--blue-600); }
 
-.footer { background:var(--gray-900); color:#fff; padding:3rem 0; }
+.footer { background:#0f172a; color:#fff; padding:3rem 0; }
 .footer h3 { margin:0 0 1rem; font-size:1.05rem; font-weight:700; }
 .footer a { color:var(--gray-300); font-size:0.9rem; display:inline-block; margin:.25rem 0; transition:color .2s; }
 .footer a:hover { color:#fff; }
