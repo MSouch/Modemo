@@ -6,6 +6,82 @@
   });
 })();
 
+// Navigation scroll behavior - transparent to solid
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  
+  let lastScrollY = window.scrollY;
+  
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    lastScrollY = currentScrollY;
+  }
+  
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader(); // Initial call
+});
+
+// Benefits timeline scroll animations - sequential reveal
+document.addEventListener('DOMContentLoaded', () => {
+  const timelineItems = document.querySelectorAll('.animate-on-scroll');
+  if (timelineItems.length === 0) return;
+
+  let currentVisibleIndex = 0; // Track which items should be visible
+
+  function revealNextItem() {
+    if (currentVisibleIndex < timelineItems.length - 1) {
+      currentVisibleIndex++;
+      const nextItem = timelineItems[currentVisibleIndex];
+      
+      // Add animate-in class when item should appear
+      nextItem.classList.add('animate-in');
+      
+      // Add pop effect after a slight delay
+      setTimeout(() => {
+        nextItem.classList.add('animate-pop');
+        
+        // Remove pop effect after animation
+        setTimeout(() => {
+          nextItem.classList.remove('animate-pop');
+        }, 400);
+      }, 200);
+    }
+  }
+
+  // Use scroll event to trigger sequential reveals
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function handleScroll() {
+    const currentScrollY = window.scrollY;
+    const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+    
+    if (scrollDirection === 'down' && currentScrollY > lastScrollY + 150) {
+      revealNextItem();
+      lastScrollY = currentScrollY;
+    }
+    
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(handleScroll);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+});
+
 function submitDemo(formId){
   const f = document.getElementById(formId);
   if(!f) return;
