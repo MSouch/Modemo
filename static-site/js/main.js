@@ -6,6 +6,39 @@
   });
 })();
 
+// Browser compatibility check for backdrop-filter
+document.addEventListener('DOMContentLoaded', () => {
+  // Check if backdrop-filter is supported
+  const supportsBackdropFilter = CSS.supports('backdrop-filter', 'blur(1px)') || 
+                                  CSS.supports('-webkit-backdrop-filter', 'blur(1px)');
+  
+  if (!supportsBackdropFilter) {
+    // Find all elements with backdrop-filter in their style attribute
+    const elementsWithBackdrop = document.querySelectorAll('[style*="backdrop-filter"]');
+    
+    elementsWithBackdrop.forEach(element => {
+      const style = element.getAttribute('style');
+      let newStyle = style;
+      
+      // Remove backdrop-filter and enhance background opacity
+      newStyle = newStyle.replace(/backdrop-filter:[^;]+;?/g, '');
+      
+      // Enhance background colors for better visibility
+      if (style.includes('rgba(255,255,255,')) {
+        newStyle = newStyle.replace(/background:rgba\(255,255,255,[\d.]+\)/g, 'background:rgba(255,255,255,0.7)');
+      } else if (style.includes('rgba(37,99,235,')) {
+        newStyle = newStyle.replace(/background:rgba\(37,99,235,[\d.]+\)/g, 'background:rgba(37,99,235,0.3)');
+      } else if (style.includes('rgba(5,150,105,')) {
+        newStyle = newStyle.replace(/background:rgba\(5,150,105,[\d.]+\)/g, 'background:rgba(5,150,105,0.3)');
+      } else if (style.includes('rgba(234,88,12,')) {
+        newStyle = newStyle.replace(/background:rgba\(234,88,12,[\d.]+\)/g, 'background:rgba(234,88,12,0.3)');
+      }
+      
+      element.setAttribute('style', newStyle);
+    });
+  }
+});
+
 // Navigation scroll behavior - transparent to solid
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
