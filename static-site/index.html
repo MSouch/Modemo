@@ -5,7 +5,7 @@
 <title>MODEMO – Mobilization & Demobilization Platform</title>
 <link rel="stylesheet" href="./css/styles.css" />
 </head><body>
-<header class="site-header"><div class="wrapper flex items-center"><a href="index.html"><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" /></a><nav class="nav"><a data-nav href="solutions.html">Solutions</a><a data-nav href="how-it-works.html">How It Works</a><a data-nav href="pricing.html">Inquire</a><a data-nav href="#">Sign In</a></nav><a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO." class="button button-md button-green rounded-lg">Schedule a Demo</a></div></header>
+<header class="site-header"><div class="wrapper flex items-center"><a href="index.html"><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" /></a><nav class="nav"><a data-nav href="solutions.html">Solutions</a><a data-nav href="how-it-works.html">How It Works</a><a data-nav href="pricing.html">Inquire</a></nav><a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=Hello, I would like to schedule a demo of MODEMO." class="button button-md button-green rounded-lg">Schedule a Demo</a></div></header>
 <main>
   <section class="hero hero-visual">
     <div class="hero-swoop"></div>
@@ -41,7 +41,7 @@
         </div>
         <div class="flex gap-6 items-center" style="flex-wrap:wrap; margin-top:1rem;">
           <a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Access Inquiry&body=Hello, I would like to inquire about accessing MODEMO for our facility." class="button button-lg button-green rounded-xl shadow" style="font-size:1.2rem; padding:1.5rem 2.5rem; font-weight:700; background:linear-gradient(135deg, #059669, #047857); box-shadow:0 8px 25px -5px rgba(5,150,105,.4), 0 4px 12px -3px rgba(0,0,0,.15); color:#ffffff;">Request Access</a>
-          <div style="color:#ffffff; font-weight:600; font-size:0.95rem; text-shadow:0 2px 6px rgba(0,0,0,.25);">Sign up in minutes • No IT required</div>
+          <div style="color:#ffffff; font-weight:600; font-size:0.95rem; text-shadow:0 2px 6px rgba(0,0,0,.25);">Sign up in minutes • Zero IT burden</div>
         </div>
       </div>
       <div>
@@ -52,18 +52,22 @@
           <div style="text-align:center; margin-bottom:1.5rem;">
             <div class="badge" style="background:rgba(5,150,105,.15); color:#047857; font-weight:700; font-size:0.8rem; padding:0.5rem 1rem; border:1px solid rgba(5,150,105,.2); display:inline-block;">Mobilization & Demobilization Platform</div>
           </div>
-            <h3>Get a Demo</h3>
-            <p>15-minute demo • Same-day setup</p>
-            <form id="demoForm" onsubmit="event.preventDefault(); submitDemo('demoForm');">
-              <input name="email" type="email" required placeholder="Work Email" class="input mb-4" />
-              <input name="company" type="text" required placeholder="Company Name" class="input mb-4" />
-              <button type="submit" class="button button-blue button-md w-full rounded-lg" style="width:100%;">Request Demo</button>
+            <h3>Account Access</h3>
+            <p style="margin:0 0 1.25rem;">Sign in with your workplace credentials</p>
+            <form id="accessSignInForm">
+              <input name="email" type="email" required placeholder="Work Email" class="input mb-4" autocomplete="username" />
+              <input name="password" type="password" required placeholder="Password" class="input mb-4" autocomplete="current-password" />
+              <button type="submit" class="button button-blue button-md w-full rounded-lg" style="width:100%;">Sign In</button>
+              <div style="margin-top:0.85rem; font-size:0.75rem; color:var(--gray-600); display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;">
+                <a href="pricing.html" style="color:var(--blue-600); font-weight:600;">Request Access</a>
+                <a href="#" id="forgotLink" style="color:var(--blue-600);">Forgot password?</a>
+              </div>
             </form>
         </div>
       </div>
     </div>
   </section>
 </main>
-<footer class="footer"><div class="wrapper"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2.5rem;"><div><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" style="filter:brightness(0) invert(1); height:32px;" /><p>The workforce mobilization platform purpose-built for industrial events.</p><p>© 2025 MODEMO®. All rights reserved.</p></div><div><h3>Explore</h3><a href="solutions.html">Solutions</a><br/><a href="how-it-works.html">How It Works</a><br/><a href="pricing.html">Inquire</a></div><div><h3>Product</h3><a href="how-it-works.html">GatePass</a><br/><a href="how-it-works.html">CrewSpec</a><br/><a href="how-it-works.html">RTW</a><br/><a href="how-it-works.html">ExitList</a></div><div><h3>Contact</h3><a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Inquiry">Email Us</a><br/><a href="#">Support</a></div></div><div class="footer-bottom"><div class="flex" style="gap:1.5rem; flex-wrap:wrap;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div><div>Mobilization & Demobilization platform for industrial events</div></div></div></footer>
+<footer class="footer"><div class="wrapper"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2.5rem;"><div><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" style="filter:brightness(0) invert(1); height:32px;" /><p>The workforce mobilization platform purpose-built for industrial events.</p><p>© 2025 MODEMO®. All rights reserved.</p></div><div><h3>Explore</h3><a href="solutions.html">Solutions</a><br/><a href="how-it-works.html">How It Works</a><br/><a href="pricing.html">Inquire</a></div><div><h3>Product</h3><a href="how-it-works.html">StartLine</a><br/><a href="how-it-works.html">CrewSpec</a><br/><a href="how-it-works.html">RTW</a><br/><a href="how-it-works.html">GatePass</a><br/><a href="how-it-works.html">ExitList</a></div><div><h3>Contact</h3><a href="mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Inquiry">Email Us</a><br/><a href="#">Support</a></div></div><div class="footer-bottom"><div class="flex" style="gap:1.5rem; flex-wrap:wrap;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div><div>Mobilization & Demobilization platform for industrial events</div></div></div></footer>
 <script src="./js/main.js"></script>
 </body></html>

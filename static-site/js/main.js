@@ -124,6 +124,39 @@ function submitDemo(formId){
   window.location.href = `mailto:atovar@ap-vantage.com,jcrager@ap-vantage.com?subject=MODEMO Demo Request&body=${body}`;
 }
 
+// Basic sign-in form (landing page) - placeholder logic
+document.addEventListener('DOMContentLoaded', () => {
+  const signInForm = document.getElementById('accessSignInForm');
+  if(!signInForm) return;
+  signInForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = signInForm.querySelector('[name=email]')?.value.trim();
+    const pw = signInForm.querySelector('[name=password]')?.value;
+    if(!email || !pw){ return; }
+    // Placeholder: in production, replace with API call
+    signInForm.querySelector('button[type=submit]').disabled = true;
+    signInForm.querySelector('button[type=submit]').textContent = 'Signing In...';
+    setTimeout(()=>{
+      // Very naive success simulation; real implementation would validate server response
+      alert('Access request received for '+ email + '\n(Replace this with real authentication flow)');
+      signInForm.querySelector('button[type=submit]').disabled = false;
+      signInForm.querySelector('button[type=submit]').textContent = 'Sign In';
+    }, 800);
+  });
+  const forgot = document.getElementById('forgotLink');
+  if(forgot){
+    forgot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = signInForm.querySelector('[name=email]')?.value.trim();
+      if(!email){
+        alert('Enter your work email first.');
+        return;
+      }
+      alert('Password reset link (placeholder) would be sent to: '+ email);
+    });
+  }
+});
+
 // Access inquiry form (pricing page)
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('accessInquiryForm');
