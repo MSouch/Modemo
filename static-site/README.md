@@ -1,6 +1,6 @@
-# MODEMO Static Site (IIS-Friendly)
+# MODEMO Static Site
 
-This folder contains a static, framework-free replica of the React marketing site so it can be hosted on IIS or any basic static web server.
+This folder contains a static, framework-free marketing site that can be hosted on any web server.
 
 ## Structure
 ```
@@ -8,16 +8,11 @@ static-site/
   index.html
   solutions.html
   how-it-works.html
-  key-benefits.html
   pricing.html
-  partials-header.html
-  partials-footer.html
   css/styles.css
   js/main.js
-  assets/Modemo.svg (copy from src assets if not already)
+  assets/Modemo.svg
 ```
-
-`partials-header.html` and `partials-footer.html` are dynamically fetched (client-side) for DRY layout. For IIS you can also use Server Side Includes (uncomment the `<!--#include ... -->` lines) if SSI is enabled.
 
 ## Notes
 - Styling extracted into a handcrafted utility + component CSS that mirrors the Tailwind classes used originally.
