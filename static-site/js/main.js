@@ -69,50 +69,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentVisibleIndex = 0; // Track which items should be visible
 
-  function revealNextItem() {
-    if (currentVisibleIndex < timelineItems.length - 1) {
-      currentVisibleIndex++;
-      const nextItem = timelineItems[currentVisibleIndex];
-      
-      // Add animate-in class when item should appear
-      nextItem.classList.add('animate-in');
-      
-      // Add pop effect after a slight delay
-      setTimeout(() => {
-        nextItem.classList.add('animate-pop');
-        
-        // Remove pop effect after animation
-        setTimeout(() => {
-          nextItem.classList.remove('animate-pop');
-        }, 400);
-      }, 200);
+    function activateItem(el){
+      if(!el.classList.contains('animate-in')){
+        el.classList.add('animate-in');
+        el.classList.add('animate-pop');
+        setTimeout(()=>el.classList.remove('animate-pop'),400);
+      }
     }
-  }
 
-  // Use scroll event to trigger sequential reveals
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-
-  function handleScroll() {
-    const currentScrollY = window.scrollY;
-    const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
-    
-    if (scrollDirection === 'down' && currentScrollY > lastScrollY + 150) {
-      revealNextItem();
-      lastScrollY = currentScrollY;
+    // Progressive reveal on scroll (kept lightweight)
+    let lastScrollY = window.scrollY;
+    function onScroll(){
+      const dir = window.scrollY > lastScrollY ? 'down' : 'up';
+      if(dir==='down'){
+        // Reveal next hidden item when passing threshold
+        const next = Array.from(timelineItems).find(i=>!i.classList.contains('animate-in'));
+        if(next && window.scrollY > lastScrollY + 150){
+          activateItem(next);
+          lastScrollY = window.scrollY;
+        }
+      } else {
+        lastScrollY = window.scrollY;
+      }
     }
-    
-    ticking = false;
-  }
+    window.addEventListener('scroll', onScroll, { passive:true });
 
-  function requestTick() {
-    if (!ticking) {
-      requestAnimationFrame(handleScroll);
-      ticking = true;
+    // Deep link handling: reveal up to anchor target immediately
+    function revealToHash(){
+      const hash = window.location.hash.replace('#','');
+      if(!hash) return;
+      const target = document.getElementById(hash);
+      if(!target) return;
+      const index = Array.from(timelineItems).indexOf(target);
+      if(index === -1) return;
+      for(let i=0;i<=index;i++){ activateItem(timelineItems[i]); }
     }
-  }
+    revealToHash();
 
-  window.addEventListener('scroll', requestTick, { passive: true });
+    // If user clicks a future product link after load (e.g. from same page footer)
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if(!target) return;
+      const index = Array.from(timelineItems).indexOf(target);
+      if(index > -1){
+        for(let i=0;i<=index;i++){ activateItem(timelineItems[i]); }
+        // Allow browser default jump after reveals (no preventDefault to keep basic anchor behavior)
+        // But force scroll into view in case browser already calculated before classes applied
+        setTimeout(()=> target.scrollIntoView({ block:'start' }), 0);
+      }
+    });
+
+    // If hash changes (user manually changes fragment)
+    window.addEventListener('hashchange', revealToHash);
 });
 
 
@@ -125,15 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = signInForm.querySelector('[name=email]')?.value.trim();
     const pw = signInForm.querySelector('[name=password]')?.value;
     if(!email || !pw){ return; }
-    // Placeholder: in production, replace with API call
-    signInForm.querySelector('button[type=submit]').disabled = true;
-    signInForm.querySelector('button[type=submit]').textContent = 'Signing In...';
-    setTimeout(()=>{
-      // Very naive success simulation; real implementation would validate server response
-      alert('Access request received for '+ email + '\n(Replace this with real authentication flow)');
-      signInForm.querySelector('button[type=submit]').disabled = false;
-      signInForm.querySelector('button[type=submit]').textContent = 'Sign In';
-    }, 800);
+    // Simulate successful auth: store a lightweight flag and redirect
+    try {
+      localStorage.setItem('modemoAuth','1');
+      localStorage.setItem('modemoUser', email);
+    } catch(err){ /* storage may fail in private mode; ignore */ }
+    window.location.href = 'dashboard.html';
   });
   const forgot = document.getElementById('forgotLink');
   if(forgot){
@@ -147,6 +155,35 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Password reset link (placeholder) would be sent to: '+ email);
     });
   }
+});
+
+// Basic mock auth guard + logout handling for internal preview pages
+document.addEventListener('DOMContentLoaded', () => {
+  const protectedPages = ['dashboard.html','resources.html','profile.html'];
+  const current = location.pathname.split('/').pop() || 'index.html';
+  const isProtected = protectedPages.includes(current);
+  const authed = (()=>{ try { return localStorage.getItem('modemoAuth') === '1'; } catch(e){ return false; } })();
+  if(isProtected && !authed){
+    // Redirect anonymous user back to marketing landing
+    window.location.replace('index.html');
+    return;
+  }
+  // Insert simple personalization if available
+  if(authed){
+    const email = (()=>{ try { return localStorage.getItem('modemoUser'); } catch(e){ return ''; } })();
+    if(email){
+      // Optionally show in a future user menu; for now set data attribute
+      document.documentElement.setAttribute('data-user-email', email);
+    }
+  }
+  // Wire logout links
+  document.querySelectorAll('#logoutLink, #logoutLinkFooter').forEach(el=>{
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      try { localStorage.removeItem('modemoAuth'); localStorage.removeItem('modemoUser'); } catch(err){}
+      window.location.href = 'index.html';
+    });
+  });
 });
 
 // Access inquiry form (pricing page)

@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dashboard – MODEMO</title>
+<link rel="stylesheet" href="./css/styles.css" />
+</head><body>
+<header class="site-header"><div class="wrapper flex items-center"><a href="dashboard.html"><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" /></a><nav class="nav"><a data-nav href="dashboard.html">Dashboard</a><a data-nav href="resources.html">Resources</a><a data-nav href="profile.html">Profile</a></nav><a id="logoutLink" href="index.html" class="button button-md button-green rounded-lg" style="background:#dc2626;">Log Out</a></div></header>
+<main>
+  <section class="hero hero-visual" style="min-height:60vh;">
+    <div class="hero-swoop"></div>
+    <div class="wrapper hero-content" style="padding-top:6rem;">
+      <h1 style="color:#ffffff; font-size:2.5rem; font-weight:800; margin:0 0 1rem; text-shadow:0 3px 12px rgba(0,0,0,.35);">Welcome Back</h1>
+      <p style="color:#ffffff; font-size:1.05rem; max-width:44ch; line-height:1.5; opacity:.9; text-shadow:0 2px 6px rgba(0,0,0,.3);">This is a placeholder logged-in dashboard view. Replace this block later with workforce readiness summaries, active events, and quick actions.</p>
+      <div style="margin-top:2.5rem; display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+        <div style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); backdrop-filter:blur(8px); padding:1.5rem; border-radius:1rem;">
+          <h3 style="color:#ffffff; margin:0 0 .5rem; font-size:1.1rem;">Readiness Snapshot</h3>
+          <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.4; margin:0;">Future KPI cards (mobilization status, % RTW, gate throughput).</p>
+        </div>
+        <div style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); backdrop-filter:blur(8px); padding:1.5rem; border-radius:1rem;">
+          <h3 style="color:#ffffff; margin:0 0 .5rem; font-size:1.1rem;">Active Events</h3>
+          <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.4; margin:0;">Placeholder list of current turnarounds or outages.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); backdrop-filter:blur(8px); padding:1.5rem; border-radius:1rem;">
+          <h3 style="color:#ffffff; margin:0 0 .5rem; font-size:1.1rem;">Quick Actions</h3>
+          <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.4; margin:0;">Future shortcuts: Invite contractors, configure requirements, export reports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="wrapper"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2.5rem;"><div><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" style="filter:brightness(0) invert(1); height:32px;" /><p>Internal MODEMO dashboard placeholder environment.</p><p>© 2025 MODEMO™. All rights reserved. MODEMO™ is a trademark wholly owned by APVantage LLC.</p></div><div><h3>Navigation</h3><a href="dashboard.html">Dashboard</a><br/><a href="resources.html">Resources</a><br/><a href="profile.html">Profile</a></div><div><h3>Modules</h3><a href="how-it-works.html#startline">StartLine</a><br/><a href="how-it-works.html#crewspec">CrewSpec</a><br/><a href="how-it-works.html#rtw">RTW</a><br/><a href="how-it-works.html#gatepass">GatePass</a><br/><a href="how-it-works.html#exitlist">ExitList</a></div><div><h3>Account</h3><a href="profile.html">Profile</a><br/><a id="logoutLinkFooter" href="index.html">Log Out</a></div></div><div class="footer-bottom"><div class="flex" style="gap:1.5rem; flex-wrap:wrap;"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div><div>MODEMO Internal Preview</div></div></div></footer>
+<script src="./js/main.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('nav a[data-nav]').forEach(a=>{if(a.getAttribute('href')===location.pathname.split('/').pop()) a.classList.add('active');});});</script>
+</body></html>
