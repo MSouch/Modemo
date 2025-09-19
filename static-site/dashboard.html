@@ -3,27 +3,61 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Dashboard – MODEMO</title>
 <link rel="stylesheet" href="./css/styles.css" />
-</head><body>
+</head><body class="dark-app">
 <header class="site-header"><div class="wrapper flex items-center"><a href="dashboard.html"><img src="assets/Modemo.svg" alt="MODEMO Logo" class="logo-img" /></a><nav class="nav"><a data-nav href="dashboard.html">Dashboard</a><a data-nav href="resources.html">Resources</a><a data-nav href="profile.html">Profile</a></nav><a id="logoutLink" href="index.html" class="button button-md button-green rounded-lg" style="background:#dc2626;">Log Out</a></div></header>
-<main>
-  <section class="hero hero-visual" style="min-height:60vh;">
+<main class="app-shell-main">
+  <section class="hero hero-visual stretch-short">
     <div class="hero-swoop"></div>
     <div class="wrapper hero-content" style="padding-top:6rem;">
-      <h1 style="color:#ffffff; font-size:2.5rem; font-weight:800; margin:0 0 1rem; text-shadow:0 3px 12px rgba(0,0,0,.35);">Welcome Back</h1>
-      <p style="color:#ffffff; font-size:1.05rem; max-width:44ch; line-height:1.5; opacity:.9; text-shadow:0 2px 6px rgba(0,0,0,.3);">This is a placeholder logged-in dashboard view. Replace this block later with workforce readiness summaries, active events, and quick actions.</p>
-      <div style="margin-top:2.5rem; display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-        <div style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); backdrop-filter:blur(8px); padding:1.5rem; border-radius:1rem;">
-          <h3 style="color:#ffffff; margin:0 0 .5rem; font-size:1.1rem;">Readiness Snapshot</h3>
-          <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.4; margin:0;">Future KPI cards (mobilization status, % RTW, gate throughput).</p>
+      <h1 style="color:#ffffff; font-size:2.5rem; font-weight:800; margin:0 0 0.75rem; text-shadow:0 3px 12px rgba(0,0,0,.35);">Welcome Back</h1>
+      <div class="meta">Here’s what’s happening with your workforce readiness</div>
+
+      <!-- KPI row -->
+      <div class="kpi-grid">
+        <div class="glass-card kpi-card">
+          <div class="kpi-value">82%</div>
+          <span class="kpi-label">Ready-to-Work</span>
         </div>
-        <div style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); backdrop-filter:blur(8px); padding:1.5rem; border-radius:1rem;">
-          <h3 style="color:#ffffff; margin:0 0 .5rem; font-size:1.1rem;">Active Events</h3>
-          <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.4; margin:0;">Placeholder list of current turnarounds or outages.</p>
+        <div class="glass-card kpi-card">
+          <div class="kpi-value">124</div>
+          <span class="kpi-label">Mobilizing</span>
         </div>
-        <div style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); backdrop-filter:blur(8px); padding:1.5rem; border-radius:1rem;">
-          <h3 style="color:#ffffff; margin:0 0 .5rem; font-size:1.1rem;">Quick Actions</h3>
-          <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.4; margin:0;">Future shortcuts: Invite contractors, configure requirements, export reports.</p>
+        <div class="glass-card kpi-card">
+          <div class="kpi-value">28m</div>
+          <span class="kpi-label">Gate Throughput</span>
         </div>
+        <div class="glass-card kpi-card">
+          <div class="kpi-value">4</div>
+          <span class="kpi-label">Active Events</span>
+        </div>
+      </div>
+
+      <div style="display:grid; gap:1.5rem; grid-template-columns:2fr 1.2fr; align-items:start;">
+        <div class="glass-card">
+          <h3 style="color:#ffffff; margin:0 0 .75rem; font-size:1.1rem;">Readiness Snapshot</h3>
+          <ul class="list">
+            <li>High priority requirements <small>Missing TWIC for 9 workers</small></li>
+            <li>Expiring certs <small>17 workers within 14 days</small></li>
+            <li>GatePass pre-clear <small>62% contractors pre-verified</small></li>
+          </ul>
+        </div>
+        <div class="glass-card">
+          <h3 style="color:#ffffff; margin:0 0 .75rem; font-size:1.1rem;">Quick Actions</h3>
+          <ul class="list">
+            <li>Invite contractor admins <small>Send email invitations</small></li>
+            <li>Configure RTW checklist <small>Requirements by craft</small></li>
+            <li>Export status report <small>Send to stakeholders</small></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-card" style="margin-top:1.5rem;">
+        <h3 style="color:#ffffff; margin:0 0 .75rem; font-size:1.1rem;">Recent Activity</h3>
+        <ul class="list">
+          <li><span class="chip green">RTW</span> 34 workers marked Ready <small>today 10:42 AM</small></li>
+          <li><span class="chip blue">GatePass</span> New checkpoint rule deployed <small>yesterday 4:18 PM</small></li>
+          <li><span class="chip orange">ExitList</span> De-mob plan finalized for Unit B <small>Mon 9:07 AM</small></li>
+        </ul>
       </div>
     </div>
   </section>

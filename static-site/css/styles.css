@@ -311,6 +311,78 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 @media (max-width:640px){ .modemo-card .title { font-size:0.9rem; } }
 .small { font-size:0.85rem; color:var(--gray-500); }
 
+/* App shell UI building blocks (internal pages) */
+.glass-card { 
+  background:rgba(255,255,255,.20) !important; 
+  border:1px solid rgba(255,255,255,.28) !important; 
+  backdrop-filter:blur(10px); 
+  -webkit-backdrop-filter:blur(10px);
+  padding:1.25rem 1.5rem; 
+  border-radius:1rem; 
+  box-shadow:0 8px 32px -12px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08) inset;
+}
+
+/* Stronger variant for high-contrast panels; overrides inline background/border */
+.glass-strong { 
+  background:rgba(255,255,255,.26) !important; 
+  border:1px solid rgba(255,255,255,.36) !important; 
+}
+
+/* Boost opacity for inline-styled frosted white cards across pages */
+/* Target only low-opacity inline frosted white cards (avoid .95+) */
+[style*="background:rgba(255,255,255,.08"][style*="backdrop-filter"],
+[style*="background: rgba(255,255,255,.08"][style*="backdrop-filter"],
+[style*="background:rgba(255, 255, 255, .08"][style*="backdrop-filter"],
+[style*="background: rgba(255, 255, 255, .08"][style*="backdrop-filter"],
+[style*="background:rgba(255,255,255,.10"][style*="backdrop-filter"],
+[style*="background: rgba(255,255,255,.10"][style*="backdrop-filter"],
+[style*="background:rgba(255, 255, 255, .10"][style*="backdrop-filter"],
+[style*="background: rgba(255, 255, 255, .10"][style*="backdrop-filter"],
+[style*="background:rgba(255,255,255,.12"][style*="backdrop-filter"],
+[style*="background: rgba(255,255,255,.12"][style*="backdrop-filter"],
+[style*="background:rgba(255, 255, 255, .12"][style*="backdrop-filter"],
+[style*="background: rgba(255, 255, 255, .12"][style*="backdrop-filter"],
+[style*="background:rgba(255,255,255,.14"][style*="backdrop-filter"],
+[style*="background: rgba(255,255,255,.14"][style*="backdrop-filter"],
+[style*="background:rgba(255, 255, 255, .14"][style*="backdrop-filter"],
+[style*="background: rgba(255, 255, 255, .14"][style*="backdrop-filter"] {
+  background: rgba(255,255,255,.20) !important;
+}
+/* Unify inline low white border overrides */
+[style*="border:1px solid rgba(255,255,255,.10"],
+[style*="border: 1px solid rgba(255,255,255,.10"],
+[style*="border:1px solid rgba(255, 255, 255, .10"],
+[style*="border: 1px solid rgba(255, 255, 255, .10"],
+[style*="border:1px solid rgba(255,255,255,.12"],
+[style*="border: 1px solid rgba(255,255,255,.12"],
+[style*="border:1px solid rgba(255, 255, 255, .12"],
+[style*="border: 1px solid rgba(255, 255, 255, .12"],
+[style*="border:1px solid rgba(255,255,255,.15"],
+[style*="border: 1px solid rgba(255,255,255,.15"],
+[style*="border:1px solid rgba(255, 255, 255, .15"],
+[style*="border: 1px solid rgba(255, 255, 255, .15"] {
+  border-color: rgba(255,255,255,.28) !important;
+}
+
+/* Re-assert strongest variant after generic inline overrides */
+.glass-strong { 
+  background:rgba(255,255,255,.26) !important; 
+  border:1px solid rgba(255,255,255,.36) !important; 
+}
+.kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin:1.75rem 0 2rem; }
+.kpi-card { padding:1rem 1.25rem; border-radius:0.85rem; }
+.kpi-value { color:#fff; font-size:1.5rem; font-weight:800; line-height:1; text-shadow:0 2px 8px rgba(0,0,0,.35); }
+.kpi-label { color:#cbd5e1; font-size:0.8rem; font-weight:600; letter-spacing:.04em; margin-top:0.4rem; display:block; }
+.chip { display:inline-flex; align-items:center; gap:0.35rem; padding:0.35rem 0.65rem; border-radius:999px; font-size:0.7rem; font-weight:700; letter-spacing:.06em; color:#fff; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.08); }
+.chip.green { background:linear-gradient(135deg,#059669,#047857); border:none; }
+.chip.blue { background:linear-gradient(135deg,#2563eb,#1d4ed8); border:none; }
+.chip.orange { background:linear-gradient(135deg,#ea580c,#c2410c); border:none; }
+.avatar { width:56px; height:56px; border-radius:999px; background:linear-gradient(135deg,#64748b,#334155); display:inline-flex; align-items:center; justify-content:center; color:#fff; font-weight:800; box-shadow:0 4px 16px -6px rgba(0,0,0,.5), 0 0 0 2px rgba(255,255,255,.12) inset; }
+.meta { color:#cbd5e1; font-size:0.85rem; }
+.list { list-style:none; margin:0; padding:0; display:grid; gap:0.75rem; }
+.list li { color:#e2e8f0; font-size:0.9rem; display:flex; align-items:flex-start; gap:0.6rem; }
+.list li small { color:#94a3b8; font-size:0.75rem; display:block; }
+
 .triple { grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); }
 .form-panel { background:#fff; border:1px solid var(--gray-200); border-radius:1.5rem; padding:2rem; box-shadow:var(--shadow); }
 .form-panel h3 { margin:0 0 .25rem; font-size:1.4rem; }
@@ -609,10 +681,10 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 
 /* Solutions Cards Redesign */
 .solution-cards { align-items:stretch; }
-.solution-card { position:relative; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:1.5rem; padding:2.5rem 2.25rem 2.75rem; backdrop-filter:blur(10px); display:flex; flex-direction:column; gap:1.75rem; box-shadow:0 8px 32px -12px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08) inset; }
+.solution-card { position:relative; background:rgba(255,255,255,.20); border:1px solid rgba(255,255,255,.28); border-radius:1.5rem; padding:2.5rem 2.25rem 2.75rem; backdrop-filter:blur(10px); display:flex; flex-direction:column; gap:1.75rem; box-shadow:0 8px 32px -12px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08) inset; }
 .solution-card:before { content:""; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(140deg, rgba(255,255,255,.12), transparent 60%); pointer-events:none; }
-.solution-card.owner { background:linear-gradient(135deg, rgba(37,99,235,.22), rgba(37,99,235,.08)); }
-.solution-card.contractor { background:linear-gradient(135deg, rgba(5,150,105,.22), rgba(5,150,105,.08)); }
+.solution-card.owner { background:linear-gradient(135deg, rgba(37,99,235,.30), rgba(37,99,235,.16)); }
+.solution-card.contractor { background:linear-gradient(135deg, rgba(5,150,105,.30), rgba(5,150,105,.16)); }
 .solution-label { display:inline-block; font-size:0.75rem; letter-spacing:.14em; font-weight:800; text-transform:uppercase; padding:0.6rem 1.2rem; border-radius:999px; background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(6px); box-shadow:0 4px 10px -4px rgba(0,0,0,.35); }
 .solution-label.owner { background:linear-gradient(135deg,#2563eb,#1d4ed8); border:none; }
 .solution-label.contractor { background:linear-gradient(135deg,#059669,#047857); border:none; }
