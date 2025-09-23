@@ -67,63 +67,117 @@ document.addEventListener('DOMContentLoaded', () => {
   const timelineItems = document.querySelectorAll('.animate-on-scroll');
   if (timelineItems.length === 0) return;
 
-  let currentVisibleIndex = 0; // Track which items should be visible
+  const items = Array.from(timelineItems);
+  let currentVisibleIndex = -1; // last revealed index
+  let armed = false; // auto-reveal only after explicit user interaction
+  let suppressScrollArm = false; // ignore programmatic scrolls (e.g., smooth anchor jump)
 
-    function activateItem(el){
-      if(!el.classList.contains('animate-in')){
-        el.classList.add('animate-in');
-        el.classList.add('animate-pop');
-        setTimeout(()=>el.classList.remove('animate-pop'),400);
-      }
+  function activateItem(el, index){
+    if(!el.classList.contains('animate-in')){
+      el.classList.add('animate-in');
+      el.classList.add('animate-pop');
+      setTimeout(()=>el.classList.remove('animate-pop'),400);
     }
-
-    // Progressive reveal on scroll (kept lightweight)
-    let lastScrollY = window.scrollY;
-    function onScroll(){
-      const dir = window.scrollY > lastScrollY ? 'down' : 'up';
-      if(dir==='down'){
-        // Reveal next hidden item when passing threshold
-        const next = Array.from(timelineItems).find(i=>!i.classList.contains('animate-in'));
-        if(next && window.scrollY > lastScrollY + 150){
-          activateItem(next);
-          lastScrollY = window.scrollY;
-        }
-      } else {
-        lastScrollY = window.scrollY;
-      }
+    if(typeof index === 'number' && index > currentVisibleIndex){
+      currentVisibleIndex = index;
     }
-    window.addEventListener('scroll', onScroll, { passive:true });
-
-    // Deep link handling: reveal up to anchor target immediately
-    function revealToHash(){
-      const hash = window.location.hash.replace('#','');
-      if(!hash) return;
-      const target = document.getElementById(hash);
-      if(!target) return;
-      const index = Array.from(timelineItems).indexOf(target);
-      if(index === -1) return;
-      for(let i=0;i<=index;i++){ activateItem(timelineItems[i]); }
+  }
+  function revealUpTo(index){
+    for(let i=0; i<=index && i<items.length; i++){
+      activateItem(items[i], i);
     }
-    revealToHash();
+  }
 
-    // If user clicks a future product link after load (e.g. from same page footer)
-    document.addEventListener('click', e => {
-      const a = e.target.closest('a[href^="#"]');
-      if(!a) return;
-      const id = a.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if(!target) return;
-      const index = Array.from(timelineItems).indexOf(target);
-      if(index > -1){
-        for(let i=0;i<=index;i++){ activateItem(timelineItems[i]); }
-        // Allow browser default jump after reveals (no preventDefault to keep basic anchor behavior)
-        // But force scroll into view in case browser already calculated before classes applied
-        setTimeout(()=> target.scrollIntoView({ block:'start' }), 0);
+  // Sequential IntersectionObserver: only reveal next item when it enters view
+  let io = null;
+  const ioHandler = (entries) => {
+    if(!armed) return;
+    const nextIndex = Math.min(currentVisibleIndex + 1, items.length - 1);
+    entries.forEach(entry => {
+      if(entry.isIntersecting && entry.target === items[nextIndex]){
+        activateItem(items[nextIndex], nextIndex);
       }
     });
+  };
+  if ('IntersectionObserver' in window) {
+    io = new IntersectionObserver(ioHandler, { root:null, rootMargin:'0px 0px -60% 0px', threshold:0.1 });
+    items.forEach(el => io.observe(el));
+  } else {
+    // Fallback for older browsers: simple scroll handler
+    function checkReveal(){
+      if(!armed) return;
+      const nextIndex = Math.min(currentVisibleIndex + 1, items.length - 1);
+      const el = items[nextIndex];
+      if(!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportH = window.innerHeight || document.documentElement.clientHeight;
+      if(rect.top < viewportH * 0.55){
+        activateItem(el, nextIndex);
+      }
+    }
+    window.addEventListener('scroll', checkReveal, { passive:true });
+    window.addEventListener('resize', checkReveal);
+    setTimeout(checkReveal, 0);
+  }
 
-    // If hash changes (user manually changes fragment)
-    window.addEventListener('hashchange', revealToHash);
+  // Arm reveals after clear user intent (wheel/touch/key/pointer). Avoid arming from programmatic scroll.
+  function armNow(){
+    armed = true;
+    suppressScrollArm = false;
+    window.removeEventListener('scroll', onScrollArm, { passive:true });
+  }
+  function onScrollArm(){ if(!suppressScrollArm) armNow(); }
+  function setupUserArm(){
+    window.addEventListener('scroll', onScrollArm, { passive:true });
+    window.addEventListener('wheel', armNow, { passive:true, once:true });
+    window.addEventListener('touchstart', armNow, { passive:true, once:true });
+    window.addEventListener('pointerdown', armNow, { passive:true, once:true });
+    const onKey = (e)=>{ const k=e.code||e.key; if(['ArrowDown','PageDown','Space','End'].includes(k) || k==='Spacebar'){ armNow(); document.removeEventListener('keydown', onKey); } };
+    document.addEventListener('keydown', onKey, { once:true });
+  }
+  setupUserArm();
+
+  // Deep link handling: reveal up to the target on load
+  function focusToHash(replaceState=false){
+    const hash = window.location.hash.replace('#','');
+    if(!hash) return false;
+    const target = document.getElementById(hash);
+    if(!target) return false;
+    const index = items.indexOf(target);
+    if(index === -1) return false;
+    revealUpTo(index);
+    // Prevent arming from the programmatic scroll to the target; wait for user interaction
+    suppressScrollArm = true;
+    if(replaceState){ try { history.replaceState(null, '', '#' + hash); } catch(_){} }
+    return true;
+  }
+
+  const hadHash = focusToHash(true);
+  if(!hadHash){
+    // No deep link: show only the first step for context; wait for user scroll to reveal more
+    if(items[0]) revealUpTo(0);
+  }
+
+  // In-page anchor clicks: reveal up to target, then smooth scroll
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if(!target) return;
+    const index = items.indexOf(target);
+    if(index > -1){
+      e.preventDefault();
+      revealUpTo(index);
+      // Don't arm from the smooth scroll; wait for real user interaction
+      suppressScrollArm = true;
+      target.scrollIntoView({ behavior:'smooth', block:'start' });
+      try { history.pushState(null, '', '#' + id); } catch(_){}
+    }
+  });
+
+  // Manual hash changes
+  window.addEventListener('hashchange', () => { focusToHash(); });
 });
 
 
@@ -141,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('modemoAuth','1');
       localStorage.setItem('modemoUser', email);
     } catch(err){ /* storage may fail in private mode; ignore */ }
-    window.location.href = 'dashboard.html';
+    window.location.href = 'resources.html';
   });
   const forgot = document.getElementById('forgotLink');
   if(forgot){
@@ -159,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Basic mock auth guard + logout handling for internal preview pages
 document.addEventListener('DOMContentLoaded', () => {
-  const protectedPages = ['dashboard.html','resources.html','profile.html'];
+  const protectedPages = ['resources.html','profile.html'];
   const current = location.pathname.split('/').pop() || 'index.html';
   const isProtected = protectedPages.includes(current);
   const authed = (()=>{ try { return localStorage.getItem('modemoAuth') === '1'; } catch(e){ return false; } })();
