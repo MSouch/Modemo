@@ -319,6 +319,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   transform:translateY(0) scale(1);
   transition:transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s;
   display:block; /* make anchors block-level grid items */
+  position:relative; /* allow arrow separators */
 }
 .platform-showcase .feature:hover,
 .platform-showcase .feature:focus {
@@ -342,9 +343,24 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .platform-showcase .features-row{
     display:grid;
     grid-template-columns:repeat(5, minmax(0, 1fr));
-    gap:0.85rem;
+    /* Use a variable so connectors align exactly with the grid gap */
+    gap:var(--tile-gap, 0.85rem);
   }
   .platform-showcase .feature{ min-width:0; } /* allow shrink within grid cell */
+  /* Dotted connector between tiles (desktop only) */
+  .platform-showcase .feature:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    /* Span exactly the grid gap and start at the card's right edge */
+    right:calc(var(--tile-gap, 0.85rem) * -1);
+    top:50%;
+    transform:translateY(-50%);
+    width:var(--tile-gap, 0.85rem);
+    height:0;
+    border-top:2px dotted #475569; /* slate-700 */
+    opacity:0.9;
+    pointer-events:none;
+  }
 }
 /* Platform inherits centering from .hero-content; no extra offsets needed */
 
@@ -892,17 +908,17 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .solution-card:before { content:""; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(140deg, rgba(255,255,255,.06), transparent 60%); pointer-events:none; }
 .solution-card.owner { background:linear-gradient(135deg, rgba(37,99,235,.30), rgba(37,99,235,.16)); }
 .solution-card.contractor { background:linear-gradient(135deg, rgba(5,150,105,.30), rgba(5,150,105,.16)); }
-.solution-label { display:inline-block; font-size:0.75rem; letter-spacing:.14em; font-weight:800; text-transform:uppercase; padding:0.6rem 1.2rem; border-radius:999px; background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(6px); box-shadow:0 4px 10px -4px rgba(0,0,0,.35); }
+.solution-label { display:inline-block; font-size:1rem; letter-spacing:.14em; font-weight:800; text-transform:uppercase; padding:0.7rem 1.4rem; border-radius:999px; background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); backdrop-filter:blur(6px); box-shadow:0 8px 18px -8px rgba(0,0,0,.4), 0 0 0 1px rgba(15,23,42,.06); }
 .solution-label.owner { background:linear-gradient(135deg,#2563eb,#1d4ed8); border:none; }
 .solution-label.contractor { background:linear-gradient(135deg,#059669,#047857); border:none; }
 .solution-head { margin:0; font-size:1.9rem; font-weight:800; line-height:1.1; color:#fff; text-shadow:0 3px 10px rgba(0,0,0,.35); letter-spacing:-0.01em; }
 .solution-features { list-style:none; margin:0; padding:0; display:grid; gap:0.95rem; }
-.solution-features li { position:relative; padding-left:2.1rem; line-height:1.35; }
+.solution-features li { position:relative; padding-left:2.1rem; line-height:1.5; }
 .solution-features li:before { content:""; position:absolute; left:0; top:0.15rem; width:1.35rem; height:1.35rem; border-radius:50%; background:conic-gradient(from 210deg at 50% 50%, #06d6a0, #059669 40%, #047857 75%, #06d6a0); box-shadow:0 0 0 2px rgba(255,255,255,.25), 0 4px 8px -2px rgba(0,0,0,.55); outline:2px solid rgba(255,255,255,.15); outline-offset:1px; }
 .solution-card.owner .solution-features li:before { background:conic-gradient(from 210deg at 50% 50%, #60a5fa, #2563eb 40%, #1d4ed8 75%, #60a5fa); box-shadow:0 0 0 2px rgba(255,255,255,.25), 0 4px 8px -2px rgba(0,0,0,.55); }
 .solution-features li:after { content:""; position:absolute; left:0.4rem; top:0.55rem; width:0.55rem; height:0.55rem; background:#ffffff; border-radius:50%; box-shadow:0 0 0 2px rgba(255,255,255,.15); }
-.solution-features li strong { display:block; font-size:0.9rem; font-weight:700; letter-spacing:.02em; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.35); }
-.solution-features li span { display:block; font-size:0.8rem; color:#e2e8f0; opacity:.95; margin-top:0.15rem; }
+.solution-features li strong { display:block; font-size:1.05rem; font-weight:700; letter-spacing:.01em; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.35); }
+.solution-features li span { display:block; font-size:0.95rem; color:#e2e8f0; opacity:.98; margin-top:0.2rem; line-height:1.55; }
 .solution-card a.button { align-self:flex-start; margin-top:0.5rem; }
 @media (max-width:900px){
   .solution-head { font-size:1.65rem; }
@@ -915,6 +931,10 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .solution-features li { padding-left:1.85rem; }
   .solution-features li:before { width:1.15rem; height:1.15rem; top:0.25rem; }
 }
+/* Align bullet list starts horizontally across the two cards on desktop */
+@media (min-width:1024px){
+  .solution-card .solution-head{ min-height:4.4rem; }
+}
 
 /* Contrast overrides when cards sit on light swoop */
 .hero-visual.light .solution-card {
@@ -925,8 +945,8 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 }
 .hero-visual.light .solution-card:before { display:none; }
 .hero-visual.light .solution-head { color:#0f172a; text-shadow:none; }
-.hero-visual.light .solution-features li strong { color:#0f172a; text-shadow:none; }
-.hero-visual.light .solution-features li span { color:#334155; }
+.hero-visual.light .solution-features li strong { color:#0f172a; text-shadow:none; font-size:0.92rem; }
+.hero-visual.light .solution-features li span { color:#1f2937; font-size:0.88rem; line-height:1.5; }
 
 /* Global light-hero: ensure definition and readable text on light swoop */
 .hero-visual.light .glass-card,
@@ -970,10 +990,25 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   /* Stronger definition for the highlight pill on light backgrounds */
   color:#0f172a;
   background:#ffffff;
-  border:1px solid #cbd5e1;
-  box-shadow:0 8px 20px -12px rgba(15,23,42,.28), 0 2px 6px -2px rgba(15,23,42,.08);
+  border:1px solid #94a3b8; /* slightly darker outline for visibility */
+  box-shadow:0 8px 20px -12px rgba(15,23,42,.24), 0 2px 6px -3px rgba(15,23,42,.08), 0 0 0 1px rgba(255,255,255,.8) inset;
   border-radius:0.65rem;
   font-weight:700;
+  display:block; /* ensure it appears below the preceding text */
+  width:max-content; /* keep pill sized to content */
+  max-width:100%; /* prevent overflow on small screens */
+}
+/* Improve readability for the descriptive sentence under each step on light hero */
+.hero-visual.light .benefit-content p:not(.benefit-highlight){
+  color:#0f172a; /* darker text for contrast */
+  font-size:1rem;
+  line-height:1.6;
+  background:#ffffff;
+  border:1px solid #e2e8f0; /* light slate border */
+  border-radius:0.5rem;
+  padding:0.5rem 0.75rem;
+  display:inline-block; /* wrap to content like a pill */
+  box-shadow:0 8px 18px -14px rgba(15,23,42,.28), 0 2px 4px -2px rgba(15,23,42,.06);
 }
 /* Cards within comparison/rtw sections on light swoop */
 .hero-visual.light .traditional-path-card h3,
