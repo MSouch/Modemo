@@ -83,6 +83,7 @@ header.site-header {
   left:50%;
   transform:translateX(-50%);
   z-index:100; 
+  /* Fully opaque at the very top */
   background:linear-gradient(180deg,#ffffff, #f3f4f6);
   border:1px solid rgba(15,23,42,0.16);
   border-radius:1rem;
@@ -93,8 +94,9 @@ header.site-header {
   transition:background 0.3s ease, backdrop-filter 0.3s ease, box-shadow .3s ease;
 }
 header.site-header.scrolled {
-  background:#ffffff;
-  border-color:rgba(15,23,42,0.20);
+  /* While scrolling: keep a subtle translucency with blur */
+  background:rgba(255,255,255,0.82);
+  border-color:rgba(15,23,42,0.18);
   box-shadow:0 14px 30px -14px rgba(15,23,42,0.35);
   backdrop-filter:blur(10px);
 }
@@ -205,6 +207,8 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 }
 /* Hero with swoop effect - wider to contain all text */
 .hero { min-height:100vh; position:relative; }
+.hero-landing { min-height:auto; }
+.hero-inquire { min-height:auto; }
 .hero-swoop {
   position:absolute;
   top:0;
@@ -361,9 +365,13 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
     display:grid;
     grid-template-columns:repeat(5, minmax(0, 1fr));
     /* Use a variable so connectors align exactly with the grid gap */
-    --tile-gap: 1.25rem; /* slightly increased spacing */
+    --tile-gap: 3rem; /* significantly increased spacing */
     gap:var(--tile-gap, 0.85rem);
+    max-width:1200px; /* allow more spread on large screens */
   }
+  /* Larger module labels on desktop */
+  .platform-showcase .feature .t { font-size:1.2rem; }
+  .platform-showcase .feature .s { font-size:0.95rem; }
   .platform-showcase .feature{ min-width:0; } /* allow shrink within grid cell */
   /* Dotted connector between tiles (desktop only) */
   .platform-showcase .feature:not(:last-child)::after{
@@ -802,6 +810,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .modemo-path-card {
   /* Muted, darker green for strong contrast */
   background: linear-gradient(135deg, #3f8d77, #2f6f59) !important;
+  position: relative;
   color:#ffffff !important;
   text-align: center;
   border:1px solid #275e4c !important;
@@ -814,35 +823,35 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .modemo-path-card span { color:#ffffff !important; text-shadow:none !important; }
 
 .rtw-sub-card {
-  /* Muted, darker green card */
-  background: linear-gradient(135deg, #3f8d77, #2f6f59) !important;
+  /* RTW step 1: #00a4b9 */
+  background: #00a4b9 !important;
+  position: relative;
   color:#ffffff !important;
-  border:1px solid #275e4c !important;
+  border:1px solid #00a4b9 !important;
   box-shadow:0 14px 30px -12px rgba(15,23,42,.32);
   border-radius:0.5rem !important;
 }
 .rtw-sub-card h3,
 .rtw-sub-card p,
-.rtw-sub-card div,
 .rtw-sub-card span { color:#ffffff !important; text-shadow:none !important; }
-
+.rtw-sub-card::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; background:rgba(255,255,255,0.12); }
 .rtw-sub-card.blue {
-  /* Muted, darker blue */
-  background: linear-gradient(135deg, #557cc6, #3c5fa6) !important;
-  border-color:#2f4a82 !important;
+  /* RTW step 2: #007db7 */
+  background: #007db7 !important;
+  border-color:#007db7 !important;
 }
 
 .rtw-sub-card.orange {
-  /* Muted, darker orange */
-  background: linear-gradient(135deg, #d07a3a, #b56124) !important;
-  border-color:#8f4a1b !important;
+  /* RTW step 3: #005397 (Verify Readiness) */
+  background: #005397 !important;
+  border-color:#005397 !important;
 }
 
 /* Problem chips in RTW section */
 .problem-chip {
-  background: linear-gradient(135deg, #b25555, #922f2f);
+  background: #005397;
   color:#ffffff;
-  border:1px solid #7a2323;
+  border:1px solid #005397;
   padding:0.5rem 1rem;
   border-radius:1.5rem;
   font-size:0.85rem;
@@ -1046,6 +1055,20 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .hero-visual.light .modemo-path-card h3 { color:#0f172a !important; text-shadow:none !important; }
 .hero-visual.light .traditional-path-card p,
 .hero-visual.light .modemo-path-card p { color:#334155 !important; text-shadow:none !important; }
+
+/* Make Go Live card titles stand out (white text with outline on colored cards) */
+.hero-visual.light .traditional-path-card h3,
+.hero-visual.light .modemo-path-card h3 {
+  color:#ffffff !important;
+  /* Crisp outline + soft depth for readability on any background */
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.45),
+    0 -1px 0 rgba(0,0,0,.45),
+    1px 0 0 rgba(0,0,0,.45),
+    -1px 0 0 rgba(0,0,0,.45),
+    0 2px 6px rgba(0,0,0,.35) !important;
+  -webkit-text-stroke: 0.4px rgba(0,0,0,.35);
+}
 
 /* Previous full-width containment override removed; replaced with variable-based layout above */
 

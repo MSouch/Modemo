@@ -48,13 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function updateHeader() {
     const currentScrollY = window.scrollY;
-    
-    if (currentScrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
+    // Opaque only when at the very top; translucent while scrolling
+    if (currentScrollY <= 10) {
       header.classList.remove('scrolled');
+    } else {
+      header.classList.add('scrolled');
     }
-    
     lastScrollY = currentScrollY;
   }
   
