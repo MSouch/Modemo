@@ -6,6 +6,39 @@
   });
 })();
 
+// Append trademark symbol to every visible occurrence of the brand name
+document.addEventListener('DOMContentLoaded', () => {
+  const BRAND_REGEX = /\bMODEMO\b(?!™)/g; // matches MODEMO not already followed by ™
+  const replaceBrand = (text) => text.replace(BRAND_REGEX, 'MODEMO™');
+
+  // Text node replacement (visible content only)
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node){
+      if(!node.nodeValue || !BRAND_REGEX.test(node.nodeValue)) return NodeFilter.FILTER_SKIP;
+      // Skip if inside certain form inputs or script/style tags just in case
+      const parent = node.parentElement;
+      if(!parent) return NodeFilter.FILTER_SKIP;
+      const tag = parent.tagName;
+      if(['SCRIPT','STYLE','NOSCRIPT','TITLE'].includes(tag)) return NodeFilter.FILTER_SKIP;
+      if(parent.closest('[data-no-tm]')) return NodeFilter.FILTER_SKIP; // opt-out hook
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const toUpdate = [];
+  while(walker.nextNode()) { toUpdate.push(walker.currentNode); }
+  toUpdate.forEach(node => { node.nodeValue = replaceBrand(node.nodeValue); });
+
+  // Update document title
+  if(document.title) {
+    document.title = replaceBrand(document.title);
+  }
+
+  // Update alt attributes (accessibility)
+  document.querySelectorAll('img[alt*="MODEMO"]').forEach(img => {
+    if(!/MODEMO™/.test(img.alt)) img.alt = replaceBrand(img.alt);
+  });
+});
+
 // Browser compatibility check for backdrop-filter
 document.addEventListener('DOMContentLoaded', () => {
   // Check if backdrop-filter is supported
@@ -59,6 +92,38 @@ document.addEventListener('DOMContentLoaded', () => {
   
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader(); // Initial call
+});
+
+// Dynamic equal spacing: ensure distance from nav to page intro == intro to next content
+document.addEventListener('DOMContentLoaded', () => {
+  const intro = document.querySelector('.page-intro');
+  if(!intro) return;
+  const header = document.querySelector('.site-header');
+  const next = intro.nextElementSibling;
+  function applyEqualSpacing(){
+    const gap = parseFloat(getComputedStyle(intro).getPropertyValue('--intro-gap')) || 40;
+    if(header){
+      const rect = header.getBoundingClientRect();
+      // distance from header bottom to intro top should equal gap
+      // header is fixed, so we set intro margin-top accordingly
+      const currentTop = intro.getBoundingClientRect().top; // relative to viewport
+      const desiredTop = rect.bottom + gap; // header bottom + gap
+      const delta = desiredTop - currentTop;
+      // Convert delta to a positive margin-top (cannot be negative realistically)
+      const marginTop = Math.max(delta, 0);
+      intro.style.marginTop = marginTop + 'px';
+    }
+    if(next){
+      next.style.marginTop = '0'; // prevent compounded spacing
+    }
+  }
+  // Initial call after layout & again on resize (debounced)
+  requestAnimationFrame(()=>{ applyEqualSpacing(); });
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyEqualSpacing, 120);
+  });
 });
 
 // Benefits timeline scroll animations - sequential reveal

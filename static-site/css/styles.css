@@ -272,6 +272,8 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   max-width:calc(92vw - 4rem); /* Match header responsive width */
   padding-left:2rem; 
   padding-right:2rem;
+  /* Reduce any implicit top spacing; spacing handled by .page-intro */
+  padding-top:0;
   box-sizing:border-box;
 }
 
@@ -347,6 +349,15 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 @media (prefers-reduced-transparency: reduce){
   .platform-showcase .modules-shell { backdrop-filter:none; }
 }
+/* Unified page intro spacing (equal top offset from nav and separation from following content) */
+.page-intro { 
+  --intro-gap:2.5rem; /* desired equal gap above/below title relative to nav and next content */
+  margin:0 auto var(--intro-gap); /* top margin will be set dynamically for accurate equality */
+  text-align:center; 
+}
+/* If we need perfect measured equality including header height variability, we could adapt with JS later. */
+.page-intro h1, .page-intro h2 { margin-top:0; }
+.page-intro p { margin:0; }
 .platform-showcase .features-row {
   display:flex; /* default for small screens */
   flex-wrap:wrap;
@@ -866,12 +877,16 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .modemo-path-card div,
 .modemo-path-card span { color:#ffffff !important; text-shadow:none !important; }
 
+/* RTW reassigned sequence:
+   1 Standardize Entry -> medium blue (#007db7)
+   2 Fast Track Entry  -> deep brand blue (#005397)
+   3 Verify Readiness  -> new navy (#0B2747)
+*/
 .rtw-sub-card {
-  /* RTW step 1: #00a4b9 */
-  background: #00a4b9 !important;
-  position: relative;
+  background:#007db7 !important;
+  position:relative;
   color:#ffffff !important;
-  border:1px solid #00a4b9 !important;
+  border:1px solid #007db7 !important;
   box-shadow:0 14px 30px -12px rgba(15,23,42,.32);
   border-radius:0.5rem !important;
 }
@@ -879,17 +894,20 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .rtw-sub-card p,
 .rtw-sub-card span { color:#ffffff !important; text-shadow:none !important; }
 .rtw-sub-card::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; background:rgba(255,255,255,0.12); }
-.rtw-sub-card.blue {
-  /* RTW step 2: #007db7 */
-  background: #007db7 !important;
-  border-color:#007db7 !important;
+.rtw-icon { 
+  width:44px; 
+  height:44px; 
+  display:inline-flex; 
+  align-items:center; 
+  justify-content:center; 
+  border-radius:50%; 
+  background:rgba(255,255,255,0.15); 
+  box-shadow:0 2px 6px -2px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.25); 
+  margin:0; 
 }
-
-.rtw-sub-card.orange {
-  /* RTW step 3: #005397 (Verify Readiness) */
-  background: #005397 !important;
-  border-color:#005397 !important;
-}
+.rtw-icon svg { width:24px; height:24px; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; fill:none; }
+.rtw-sub-card.blue { /* deep brand blue now */ background:#005397 !important; border-color:#005397 !important; }
+.rtw-sub-card.navy { background:#0B2747 !important; border-color:#0B2747 !important; }
 
 /* Problem chips in RTW section */
 .problem-chip {
