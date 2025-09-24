@@ -47,13 +47,13 @@ a { text-decoration:none; color:inherit; }
 
 /* Layout */
 .wrapper { 
-  width:72rem; /* Match header width */
-  max-width:calc(92vw - 4rem); /* Match header responsive width */
+  width:72rem;
+  max-width:calc(92vw - 4rem);
   margin:0 auto; 
-  padding:0 2rem; /* Match header padding */
+  padding:0 2rem;
   box-sizing:border-box;
 }
-/* Responsive adjustments for wrapper to match header */
+
 @media (max-width:1200px){ 
   .wrapper { max-width:calc(94vw - 4rem); }
 }
@@ -83,24 +83,21 @@ header.site-header {
   left:50%;
   transform:translateX(-50%);
   z-index:100; 
-  /* Fully opaque at the very top */
   background:linear-gradient(180deg,#ffffff, #f3f4f6);
   border:1px solid rgba(15,23,42,0.16);
   border-radius:1rem;
-  padding:0.5rem 1.5rem; /* Reduced from 2rem */
+  padding:0.5rem 1.5rem;
   box-shadow:0 10px 24px -10px rgba(15,23,42,0.28);
   width:72rem;
-  max-width:calc(92vw - 4rem); /* Match swoop width */
+  max-width:calc(92vw - 4rem);
   transition:background 0.3s ease, backdrop-filter 0.3s ease, box-shadow .3s ease;
 }
 header.site-header.scrolled {
-  /* While scrolling: keep a subtle translucency with blur */
   background:rgba(255,255,255,0.82);
   border-color:rgba(15,23,42,0.18);
   box-shadow:0 14px 30px -14px rgba(15,23,42,0.35);
   backdrop-filter:blur(10px);
 }
-/* Header responsive adjustments to match swoop */
 @media (max-width:1200px){ 
   header.site-header { max-width:calc(94vw - 4rem); }
   .nav { gap:1.25rem; }
@@ -123,21 +120,21 @@ header.site-header.scrolled {
   min-height:auto;
   align-items:center;
   justify-content:space-between;
-  gap:0.5rem; /* Reduced gap */
+  gap:0.5rem;
   padding:0;
-  max-width:none; /* Override wrapper max-width */
-  width:100%; /* Use full header width */
+  max-width:none;
+  width:100%;
 }
-.logo-img { height:44px; width:auto; } /* Reduced from 52px */
+.logo-img { height:44px; width:auto; }
 .site-header a[href="index.html"] { margin-right:auto; }
 .site-header .button { margin-left:auto; }
 .nav { 
   display:flex;
   align-items:center;
-  gap:1.5rem; /* Further reduced for better fit */
+  gap:1.5rem;
   flex:1;
   justify-content:center;
-  min-width:0; /* Allow shrinking */
+  min-width:0;
 }
 .nav a { 
   font-size:1rem; 
@@ -149,20 +146,20 @@ header.site-header.scrolled {
 .nav a.active, .nav a:hover { 
   color:#F47C04 !important; 
 }
-/* Underline indicator for clarity on white */
+
 .nav a::after { content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:currentColor; transform:scaleX(0); transform-origin:left center; transition:transform .2s ease; opacity:.9; }
 .nav a:hover::after, .nav a.active::after, .nav a:focus-visible::after { transform:scaleX(1); }
 .nav a:focus-visible { outline:none; }
 .site-header .button {
   white-space:nowrap;
-  flex-shrink:0; /* Prevent button from shrinking */
-  margin-left:0.25rem; /* Reduced spacing */
-  padding:0.5rem 0.85rem !important; /* Force smaller size in header */
+  flex-shrink:0;
+  margin-left:0.25rem;
+  padding:0.5rem 0.85rem !important;
   font-size:0.85rem !important;
 }
 .button { cursor:pointer; border:none; font:inherit; font-weight:600; line-height:1.2; display:inline-flex; align-items:center; justify-content:center; border-radius:0.375rem; transition:background .25s, transform .25s, box-shadow .25s; }
 .button-lg { padding:1.25rem 2rem; font-size:1.125rem; }
-.button-md { padding:0.6rem 1rem; font-size:0.9rem; } /* More compact for header */
+.button-md { padding:0.6rem 1rem; font-size:0.9rem; }
 .button-green { background:var(--green-600); color:#fff; }
 .button-green:hover { background:var(--green-700); }
 .button-blue { background:var(--blue-600); color:#fff; }
@@ -180,11 +177,9 @@ header.site-header.scrolled {
 /* Sections */
 .hero { min-height:100vh; display:flex; align-items:center; background:linear-gradient(to bottom right,var(--blue-50),#ffffff); background:linear-gradient(to bottom right,#eff6ff,#ffffff); padding:6rem 0 2rem; }
 .hero.hero-visual { position:relative; overflow:hidden; background:#0f172a; display:block; }
-.hero.hero-visual.stretch-short { min-height:calc(100vh - 240px); padding-bottom:4rem; } /* ensure coverage & add bottom space so gradient naturally meets footer */
+.hero.hero-visual.stretch-short { min-height:calc(100vh - 240px); padding-bottom:4rem; }
 
-/* Remove any accidental background seam between a dark hero and footer on short content pages */
 body:has(main > .hero.hero-visual:last-child) .hero.hero-visual { margin-bottom:0; }
-/* Fallback for browsers without :has (use dark-app class) */
 body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 
 @media (max-width:900px){
@@ -193,7 +188,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .hero { min-height:100vh; padding:5rem 0 1.5rem; }
   .hero-content { max-width:95%; }
   .hero .wrapper { padding-right:1.5rem; }
-  /* Platform features within hero - tablet */
+
   .platform-features-grid { 
     grid-template-columns:repeat(3,1fr) !important; 
     gap:0.75rem !important; 
@@ -205,7 +200,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
     grid-column:2; 
   }
 }
-/* Hero with swoop effect - wider to contain all text */
+
 .hero { min-height:100vh; position:relative; }
 .hero-landing { min-height:auto; }
 .hero-inquire { min-height:auto; }
@@ -215,7 +210,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   right:0;
   width:92%;
   height:100%;
-  /* Base layered gradient stack for depth */
+
   background:
     radial-gradient(125% 125% at 92% 92%, rgba(2,6,23,0.36), rgba(2,6,23,0) 46%),
     radial-gradient(circle at 68% 24%, rgba(5,150,105,0.06), rgba(5,150,105,0) 60%),
@@ -234,7 +229,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   box-shadow:-8px 0 22px -6px rgba(15,23,42,.42), inset 0 0 120px rgba(255,255,255,.07);
   overflow:hidden;
 }
-/* Subtle animated sheen & noise overlay */
+
 .hero-swoop:before, .hero-swoop:after { content:""; position:absolute; inset:0; pointer-events:none; }
 .hero-swoop:before {
   background:linear-gradient(115deg, rgba(255,255,255,0) 5%, rgba(5,150,105,0.12) 48%, rgba(255,255,255,0) 78%);
@@ -259,7 +254,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 @media (prefers-reduced-motion:reduce){
   .hero-swoop:before { animation:none; opacity:.3; }
 }
-/* Accent edge glow to subtly separate from page */
+
 .hero-swoop::marker { display:none; }
 .hero-swoop:focus { outline:none; }
 .hero-swoop:after { box-shadow:inset 0 0 120px -60px rgba(2,6,23,.22); }
@@ -268,63 +263,56 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   z-index:3; 
   margin-left:auto; 
   margin-right:auto; 
-  width:72rem; /* Match header width exactly */
-  max-width:calc(92vw - 4rem); /* Match header responsive width */
+  width:72rem;
+  max-width:calc(92vw - 4rem);
   padding-left:2rem; 
   padding-right:2rem;
-  /* Reduce any implicit top spacing; spacing handled by .page-intro */
   padding-top:0;
   box-sizing:border-box;
 }
 
-/* Keep hero grid and platform centered within the swoop at all widths */
 .hero-visual.light .hero-content,
 .hero-visual.light .platform-section {
   margin-left:auto;
   margin-right:auto;
 }
-
-/* Platform uses same centering as hero-content (auto margins) */
-
-/* New centered platform showcase under hero */
 .platform-showcase {
   position:relative;
-  z-index:3; /* above swoop */
+  z-index:3;
   margin-top:3.5rem;
   padding-bottom:3rem;
   text-align:center;
 }
 .platform-showcase h2 {
-  color:#0f172a; /* dark text on light swoop */
+  color:#0f172a;
   text-shadow:none;
 }
 .platform-showcase .sub {
-  color:#334155; /* slate-700 */
+  color:#334155;
   font-size:1.05rem;
   font-weight:500;
   margin:0.35rem 0 1.5rem;
   text-shadow:none;
 }
-/* Subtle differentiated container for module tiles */
+
 .platform-showcase .modules-shell {
   position:relative;
   padding:2.25rem 2.25rem 2.5rem;
   margin:0 auto;
   max-width:1240px;
-  border:1.5px solid rgba(15,23,42,0.18); /* stronger outer delineation */
+  border:1.5px solid rgba(15,23,42,0.18);
   border-radius:1.75rem;
   background:linear-gradient(150deg, rgba(255,255,255,0.84), rgba(247,249,252,0.9) 48%, rgba(238,242,247,0.96));
-  /* Elevated multi-layer shadow + subtle inner rings for definition */
   box-shadow:
     0 14px 48px -16px rgba(15,23,42,0.40),
     0 6px 22px -8px rgba(15,23,42,0.22),
     0 2px 6px -1px rgba(15,23,42,0.12),
     inset 0 0 0 1.25px rgba(255,255,255,0.55),
     inset 0 0 0 6px rgba(255,255,255,0.35),
-    inset 0 0 22px -4px rgba(0,83,151,0.12); /* faint brand glow */
+    inset 0 0 22px -4px rgba(0,83,151,0.12);
   backdrop-filter:blur(12px) saturate(1.3);
 }
-/* Decorative gradient edges (top + bottom) */
+
 .platform-showcase .modules-shell:before,
 .platform-showcase .modules-shell:after {
   content:"";
@@ -349,17 +337,15 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 @media (prefers-reduced-transparency: reduce){
   .platform-showcase .modules-shell { backdrop-filter:none; }
 }
-/* Unified page intro spacing (equal top offset from nav and separation from following content) */
 .page-intro { 
-  --intro-gap:2.5rem; /* desired equal gap above/below title relative to nav and next content */
-  margin:0 auto var(--intro-gap); /* top margin will be set dynamically for accurate equality */
+  --intro-gap:2.5rem;
+  margin:0 auto var(--intro-gap);
   text-align:center; 
 }
-/* If we need perfect measured equality including header height variability, we could adapt with JS later. */
 .page-intro h1, .page-intro h2 { margin-top:0; }
 .page-intro p { margin:0; }
 .platform-showcase .features-row {
-  display:flex; /* default for small screens */
+  display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:1rem;
@@ -374,11 +360,11 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   text-align:center;
   box-shadow:0 6px 20px -6px rgba(0,0,0,0.4);
   border:1px solid rgba(255,255,255,0.18);
-  text-decoration:none; /* if anchor */
+  text-decoration:none;
   transform:translateY(0) scale(1);
   transition:transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s;
-  display:block; /* make anchors block-level grid items */
-  position:relative; /* allow arrow separators */
+  display:block;
+  position:relative;
 }
 .platform-showcase .feature:hover,
 .platform-showcase .feature:focus {
