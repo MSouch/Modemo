@@ -94,35 +94,71 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeader(); // Initial call
 });
 
-// Dynamic equal spacing: ensure distance from nav to page intro == intro to next content
+// Dynamic equal spacing with deep-link friendly restore
 document.addEventListener('DOMContentLoaded', () => {
   const intro = document.querySelector('.page-intro');
   if(!intro) return;
   const header = document.querySelector('.site-header');
   const next = intro.nextElementSibling;
+  const BUFFER = 80; // breathing room for anchor targets
+
   function applyEqualSpacing(){
     const gap = parseFloat(getComputedStyle(intro).getPropertyValue('--intro-gap')) || 40;
     if(header){
       const rect = header.getBoundingClientRect();
-      // distance from header bottom to intro top should equal gap
-      // header is fixed, so we set intro margin-top accordingly
-      const currentTop = intro.getBoundingClientRect().top; // relative to viewport
-      const desiredTop = rect.bottom + gap; // header bottom + gap
-      const delta = desiredTop - currentTop;
-      // Convert delta to a positive margin-top (cannot be negative realistically)
-      const marginTop = Math.max(delta, 0);
-      intro.style.marginTop = marginTop + 'px';
+      const introRect = intro.getBoundingClientRect();
+      const desiredTop = rect.bottom + gap;
+      const delta = desiredTop - introRect.top;
+      intro.style.marginTop = Math.max(delta, 0) + 'px';
+      document.documentElement.style.setProperty('--anchor-offset', (rect.height + BUFFER) + 'px');
     }
-    if(next){
-      next.style.marginTop = '0'; // prevent compounded spacing
-    }
+    if(next){ next.style.marginTop = '0'; }
   }
-  // Initial call after layout & again on resize (debounced)
-  requestAnimationFrame(()=>{ applyEqualSpacing(); });
+
+  // Detect deep link to a timeline step
+  const hashId = location.hash.replace('#','');
+  const targetEl = hashId ? document.getElementById(hashId) : null;
+  const isTimelineDeepLink = !!(targetEl && targetEl.closest('.benefits-timeline'));
+
+  if(isTimelineDeepLink){
+    // Hold a neutral static top spacing so the intro doesn't jump mid-load
+    intro.style.marginTop = '2.5rem';
+    setTimeout(()=>{
+      if(header){
+        const headerRect = header.getBoundingClientRect();
+        document.documentElement.style.setProperty('--anchor-offset', (headerRect.height + BUFFER) + 'px');
+        // Reposition the target below header + buffer
+        const tRect = targetEl.getBoundingClientRect();
+        const desiredViewportY = headerRect.bottom + BUFFER;
+        const delta = tRect.top - desiredViewportY;
+        if(Math.abs(delta) > 4){
+          window.scrollBy({ top: delta, left:0, behavior:'instant' in window ? 'instant' : 'auto' });
+        }
+      }
+    }, 20);
+    // When user scrolls back near top, restore dynamic equal spacing
+    function restoreAtTop(){
+      if(window.scrollY < 60){
+        intro.style.marginTop = '';
+        applyEqualSpacing();
+        window.removeEventListener('scroll', restoreAtTop, passiveScrollOpts);
+      }
+    }
+    const passiveScrollOpts = { passive:true };
+    window.addEventListener('scroll', restoreAtTop, passiveScrollOpts);
+  } else {
+    requestAnimationFrame(applyEqualSpacing);
+  }
+
+  // Debounced resize: only recompute if not in temporary deep-link mode or user is back at top
   let resizeTimer = null;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(applyEqualSpacing, 120);
+    resizeTimer = setTimeout(()=>{
+      if(!isTimelineDeepLink || window.scrollY < 60){
+        applyEqualSpacing();
+      }
+    }, 140);
   });
 });
 
@@ -222,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(items[0]) revealUpTo(0);
   }
 
-  // In-page anchor clicks: reveal up to target, then smooth scroll
+  // In-page anchor clicks: reveal up to target, then smooth scroll with header offset compensation
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href^="#"]');
     if(!a) return;
@@ -235,7 +271,13 @@ document.addEventListener('DOMContentLoaded', () => {
       revealUpTo(index);
       // Don't arm from the smooth scroll; wait for real user interaction
       suppressScrollArm = true;
-      target.scrollIntoView({ behavior:'smooth', block:'start' });
+      const header = document.querySelector('.site-header');
+      const buffer = 80; // larger room
+      const targetRect = target.getBoundingClientRect();
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      // Position target so its top sits below header + buffer
+      const targetScrollTop = window.scrollY + targetRect.top - headerHeight - buffer;
+      window.scrollTo({ top: Math.max(targetScrollTop, 0), behavior:'smooth' });
       try { history.pushState(null, '', '#' + id); } catch(_){}
     }
   });

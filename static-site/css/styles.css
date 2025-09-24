@@ -772,7 +772,8 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .benefits-timeline { max-width:calc(100vw - 4rem); }
 }
 .benefit-step { display:flex; align-items:flex-start; gap:2rem; opacity:0; transform:translateY(40px) scale(0.95); transition:all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position:relative; }
-.benefit-step { scroll-margin-top:140px; }
+/* Use variable-based anchor offset so JS can adapt to header height dynamically. Fallback keeps prior reasonable value. */
+.benefit-step { scroll-margin-top:var(--anchor-offset, 180px); }
 .benefits-timeline:not(.single-focus) .benefit-step:first-child { opacity:1; transform:translateY(0) scale(1); }
 .benefit-step.animate-in { opacity:1; transform:translateY(0) scale(1); }
 .benefit-step.animate-pop { transform:translateY(-8px) scale(1.02); }
