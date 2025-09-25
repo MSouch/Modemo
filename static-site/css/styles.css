@@ -176,7 +176,7 @@ header.site-header.scrolled {
 
 /* Sections */
 .hero { min-height:100vh; display:flex; align-items:center; background:linear-gradient(to bottom right,var(--blue-50),#ffffff); background:linear-gradient(to bottom right,#eff6ff,#ffffff); padding:6rem 0 2rem; }
-.hero.hero-visual { position:relative; overflow:hidden; background:#0f172a; display:block; }
+.hero.hero-visual { position:relative; overflow:hidden; background:#0f172a; display:block; min-height:100vh; }
 .hero.hero-visual.stretch-short { min-height:calc(100vh - 240px); padding-bottom:4rem; }
 
 body:has(main > .hero.hero-visual:last-child) .hero.hero-visual { margin-bottom:0; }
@@ -204,6 +204,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .hero { min-height:100vh; position:relative; }
 .hero-landing { min-height:auto; }
 .hero-inquire { min-height:auto; }
+.hero.hero-visual.light { min-height:auto; }
 .hero-swoop {
   position:absolute;
   top:0;

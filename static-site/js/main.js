@@ -74,7 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const next = intro.nextElementSibling;
   const BUFFER = 80;
 
-  function applyEqualSpacing(){
+  function applyEqualSpacing(forceReset = false){
+    if(forceReset) {
+      intro.style.marginTop = '';
+    }
     const gap = parseFloat(getComputedStyle(intro).getPropertyValue('--intro-gap')) || 40;
     if(header){
       const rect = header.getBoundingClientRect();
@@ -105,8 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 20);
     function restoreAtTop(){
       if(window.scrollY < 60){
-        intro.style.marginTop = '';
-        applyEqualSpacing();
+        applyEqualSpacing(true);
         window.removeEventListener('scroll', restoreAtTop, {passive:true});
       }
     }
@@ -119,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(()=>{
-      if(!isTimelineDeepLink || window.scrollY < 60) applyEqualSpacing();
+      applyEqualSpacing(true);
     }, 140);
   });
 });
