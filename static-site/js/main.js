@@ -27,24 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Browser compatibility check for backdrop-filter
 document.addEventListener('DOMContentLoaded', () => {
-  // Check if backdrop-filter is supported
   const supportsBackdropFilter = CSS.supports('backdrop-filter', 'blur(1px)') || 
                                   CSS.supports('-webkit-backdrop-filter', 'blur(1px)');
   
   if (!supportsBackdropFilter) {
-    // Find all elements with backdrop-filter in their style attribute
     const elementsWithBackdrop = document.querySelectorAll('[style*="backdrop-filter"]');
     
     elementsWithBackdrop.forEach(element => {
       const style = element.getAttribute('style');
       let newStyle = style;
       
-      // Remove backdrop-filter and enhance background opacity
       newStyle = newStyle.replace(/backdrop-filter:[^;]+;?/g, '');
       
-      // Enhance background colors for better visibility
       if (style.includes('rgba(255,255,255,')) {
         newStyle = newStyle.replace(/background:rgba\(255,255,255,[\d.]+\)/g, 'background:rgba(255,255,255,0.7)');
       } else if (style.includes('rgba(37,99,235,')) {

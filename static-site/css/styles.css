@@ -400,70 +400,53 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .platform-showcase .feature { min-width:140px; }
 }
 
-/* Desktop: lock to a single row of five, centered */
 @media (min-width:900px){
   .platform-showcase .features-row{
     display:grid;
     grid-template-columns:repeat(5, minmax(0, 1fr));
-    /* Use a variable so connectors align exactly with the grid gap */
-    --tile-gap: 3rem; /* significantly increased spacing */
+    --tile-gap: 3rem;
     gap:var(--tile-gap, 0.85rem);
-    max-width:1200px; /* allow more spread on large screens */
+    max-width:1200px;
   }
-  /* Larger module labels on desktop */
   .platform-showcase .feature .t { font-size:1.2rem; }
   .platform-showcase .feature .s { font-size:0.95rem; }
-  .platform-showcase .feature{ min-width:0; } /* allow shrink within grid cell */
-  /* Dotted connector between tiles (desktop only) */
+  .platform-showcase .feature{ min-width:0; }
   .platform-showcase .feature:not(:last-child)::after{
     content:"";
     position:absolute;
-    /* Span exactly the grid gap and start at the card's right edge */
     right:calc(var(--tile-gap, 0.85rem) * -1);
     top:50%;
     transform:translateY(-50%);
     width:var(--tile-gap, 0.85rem);
     height:0;
-    border-top:2px dotted #475569; /* slate-700 */
+    border-top:2px dotted #475569;
     opacity:0.9;
     pointer-events:none;
   }
 }
-/* Platform inherits centering from .hero-content; no extra offsets needed */
-
-/* Light hero variant for landing page */
 .hero.hero-visual.light { background:#0f172a !important; }
 .hero-visual.light .hero-swoop {
   background:
-    /* Inner left-edge shadow to separate swoop from blue background */
     linear-gradient(to right, rgba(30,41,59,0.20) 0px, rgba(30,41,59,0.0) 78px),
-    /* Soft neutral highlight toward lower-right */
     radial-gradient(115% 120% at 92% 88%, rgba(255,255,255,0.60), rgba(255,255,255,0) 58%),
-    /* Gentle neutral clouding */
     radial-gradient(60% 50% at 28% 30%, rgba(226,232,240,0.22), rgba(226,232,240,0) 62%),
-    /* Neutral sheen */
     linear-gradient(120deg, rgba(255,255,255,0.55), rgba(255,255,255,0.18) 55%, rgba(255,255,255,0) 75%),
-    /* Base off‑white sweep */
     linear-gradient(315deg, #ffffff 0%, #f7f8fb 36%, #eef1f5 70%, #e7ebf0 100%);
-  /* Left-side shadow for separation + soft inner brightening */
   box-shadow:-14px 0 28px -10px rgba(15,23,42,.26), inset 0 0 90px rgba(255,255,255,.18);
 }
 .hero-visual.light .hero-swoop:before {
-  /* Neutral sheen pass */
   background:linear-gradient(115deg, rgba(255,255,255,0) 5%, rgba(255,255,255,0.22) 48%, rgba(255,255,255,0) 78%);
   opacity:0.14;
 }
 .hero-visual.light .hero-swoop:after {
   background:
-    /* Additional inner edge soft shadow overlay (topmost) */
     linear-gradient(to right, rgba(15,23,42,0.22) 0px, rgba(15,23,42,0.0) 60px),
-    /* Subtle texture without blue tint */
     repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 7px, rgba(255,255,255,0) 7px 14px),
     radial-gradient(circle at 32% 74%, rgba(0,0,0,0.04), rgba(0,0,0,0) 62%);
   box-shadow:inset 0 0 140px -64px rgba(255,255,255,.20);
   opacity:0.16;
 }
-/* Responsive swoop adjustments - content scales with swoop */
+
 @media (max-width:1200px){ 
   .hero-swoop { width:94%; } 
   .hero-content { max-width:calc(94vw - 4rem); }
@@ -477,19 +460,18 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .hero-content { max-width:calc(100vw - 4rem); }
 }
 
-/* Platform section that follows hero: keep within swoop width and stack below */
 .platform-section {
   position:relative;
-  z-index:3; /* above swoop background */
+  z-index:3;
   width:72rem;
   max-width:calc(92vw - 4rem);
-  margin:3.5rem auto 0; /* spacing from hero grid */
+  margin:3.5rem auto 0;
   padding:0 2rem 3rem;
   box-sizing:border-box;
 }
 @media (min-width: 900px){
   .hero-visual.light .platform-section{
-    margin-left:4vw; /* align with hero-content shift */
+    margin-left:4vw;
     margin-right:auto;
   }
 }
@@ -535,7 +517,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 @media (max-width:640px){ .modemo-card .title { font-size:0.9rem; } }
 .small { font-size:0.85rem; color:var(--gray-500); }
 
-/* App shell UI building blocks (internal pages) */
+
 .glass-card { 
   background:rgba(255,255,255,.20) !important; 
   border:1px solid rgba(255,255,255,.28) !important; 
@@ -546,7 +528,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   position:relative;
   box-shadow:0 8px 32px -12px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.04) inset;
 }
-/* Subtle darkening in bottom-right to reduce white glare behind transparent cards */
+
 .glass-card::before {
   content:"";
   position:absolute;
@@ -556,14 +538,13 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   background:radial-gradient(120% 120% at 85% 85%, rgba(15,23,42,.18), rgba(15,23,42,0) 55%);
 }
 
-/* Stronger variant for high-contrast panels; overrides inline background/border */
+
 .glass-strong { 
   background:rgba(255,255,255,.26) !important; 
   border:1px solid rgba(255,255,255,.36) !important; 
 }
 
-/* Boost opacity for inline-styled frosted white cards across pages */
-/* Target only low-opacity inline frosted white cards (avoid .95+) */
+
 [style*="background:rgba(255,255,255,.08"][style*="backdrop-filter"],
 [style*="background: rgba(255,255,255,.08"][style*="backdrop-filter"],
 [style*="background:rgba(255, 255, 255, .08"][style*="backdrop-filter"],
@@ -582,7 +563,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 [style*="background: rgba(255, 255, 255, .14"][style*="backdrop-filter"] {
   background: rgba(255,255,255,.20) !important;
 }
-/* Unify inline low white border overrides */
+
 [style*="border:1px solid rgba(255,255,255,.10"],
 [style*="border: 1px solid rgba(255,255,255,.10"],
 [style*="border:1px solid rgba(255, 255, 255, .10"],
@@ -598,7 +579,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   border-color: rgba(255,255,255,.28) !important;
 }
 
-/* Re-assert strongest variant after generic inline overrides */
+
 .glass-strong { 
   background:rgba(255,255,255,.26) !important; 
   border:1px solid rgba(255,255,255,.36) !important; 
@@ -610,7 +591,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .chip { display:inline-flex; align-items:center; gap:0.35rem; padding:0.35rem 0.65rem; border-radius:999px; font-size:0.7rem; font-weight:700; letter-spacing:.06em; color:#fff; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.08); }
 .chip.green { background:linear-gradient(135deg,#059669,#047857); border:none; }
 .chip.blue { background:linear-gradient(135deg,#2563eb,#1d4ed8); border:none; }
-/* Brand blue update */
+
 .chip.blue { background:linear-gradient(135deg,#005397,#00467f); }
 .chip.orange { background:linear-gradient(135deg,#ea580c,#c2410c); border:none; }
 .avatar { width:56px; height:56px; border-radius:999px; background:linear-gradient(135deg,#64748b,#334155); display:inline-flex; align-items:center; justify-content:center; color:#fff; font-weight:800; box-shadow:0 4px 16px -6px rgba(0,0,0,.5), 0 0 0 2px rgba(255,255,255,.12) inset; }
@@ -649,7 +630,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .footer p { margin:0 0 1rem; color:var(--gray-300); font-size:0.9rem; line-height:1.4; }
 .footer-bottom { border-top:1px solid var(--gray-700); margin-top:2rem; padding-top:2rem; display:flex; flex-direction:column; gap:1rem; font-size:0.75rem; color:var(--gray-400); }
 @media (min-width:768px){ .footer-bottom { flex-direction:row; justify-content:space-between; align-items:center; } }
-/* Mobile footer layout enhancements */
+
 @media (max-width:640px){
   .footer { padding:2.25rem 0 2.75rem; }
   .footer .grid { display:grid !important; grid-template-columns:1fr 1fr; gap:1.75rem !important; }
@@ -671,16 +652,15 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .section-band { padding:6rem 0; }
 .section-light { background:var(--gray-50); border-top:1px solid var(--gray-200); border-bottom:1px solid var(--gray-200); }
 
-/* Go Live Comparison Redesign */
+
 .comparison-wrap { 
   width:72rem; 
-  max-width:calc(92vw - 4rem); /* Match header responsive width */
+  max-width:calc(92vw - 4rem);
   margin:0 auto; 
   padding-left:2rem;
   padding-right:2rem;
   box-sizing:border-box;
 }
-/* Responsive adjustments for comparison wrap to match header */
 @media (max-width:1200px){ 
   .comparison-wrap { max-width:calc(94vw - 4rem); }
 }
@@ -708,14 +688,14 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .timeline-marker { position:absolute; left:-0.05rem; top:0.55rem; width:0.85rem; height:0.85rem; border-radius:50%; background:#fff; border:3px solid var(--gray-300); box-shadow:0 0 0 2px #fff; pointer-events:none; }
 .timeline.modemo .timeline-marker { border-color:var(--green-600); }
 .timeline.modemo .timeline-marker { border-color:var(--green-600); }
-.timeline-marker { display:none !important; } /* markers removed */
+.timeline-marker { display:none !important; }
 .timeline-step h4 { margin:0 0 0.55rem; font-size:1.02rem; font-weight:700; display:flex; align-items:center; flex-wrap:wrap; gap:.55rem; line-height:1.28; padding-right:.65rem; position:relative; z-index:2; }
 .timeline-step small { font-size:0.7rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:0.25rem 0.6rem; border-radius:999px; background:var(--gray-100); color:var(--gray-600); }
 .timeline.modemo .timeline-step small { background:var(--green-100); color:var(--green-700); }
 .timeline-step p { margin:0; font-size:0.95rem; line-height:1.45; color:var(--gray-600); }
 
 .vs-label { display:inline-block; font-size:0.65rem; font-weight:700; letter-spacing:.12em; color:var(--gray-600); background:#fff; border:1px solid var(--gray-200); padding:0.35rem 0.75rem; border-radius:999px; margin-bottom:1.25rem; position:relative; z-index:1; }
-/* Removed absolute centering to avoid overlap; label now local to each column */
+
 
 .timeline-callout { margin-top:2.5rem; background:linear-gradient(135deg,var(--green-600),var(--blue-600)); color:#fff; padding:1.5rem 1.75rem; border-radius:1rem; display:flex; flex-direction:column; gap:0.5rem; box-shadow:var(--shadow); }
 .timeline-callout h5 { margin:0; font-size:1.05rem; font-weight:700; letter-spacing:.03em; }
@@ -726,7 +706,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .legend-swatch { width:14px; height:14px; border-radius:3px; background:var(--gray-300); }
 .legend-swatch.modemo { background:var(--green-600); }
 
-/* Compact hero variant for interior pages */
+
 .mini-hero { padding:3.5rem 0 3.25rem; background:linear-gradient(to bottom right,var(--gray-50),#fff); border-bottom:1px solid var(--gray-200); }
 .mini-hero h1, .mini-hero h2 { margin:0 0 .75rem; font-size:2.35rem; line-height:1.15; font-weight:700; }
 .mini-hero p.lead { margin:0; font-size:1.05rem; line-height:1.4; color:var(--gray-600); }
@@ -736,18 +716,17 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .mini-hero p.lead { font-size:1.15rem; }
 }
 
-/* Key Benefits Progressive Timeline */
+
 .benefits-timeline { 
   display:flex; 
   flex-direction:column; 
   gap:2.5rem; 
   width:72rem;
-  max-width:calc(92vw - 4rem); /* Match header responsive width */
+  max-width:calc(92vw - 4rem);
   margin:0 auto 4rem; 
   padding:0 2rem;
   box-sizing:border-box;
 }
-/* Responsive adjustments for benefits timeline to match header */
 @media (max-width:1200px){ 
   .benefits-timeline { max-width:calc(94vw - 4rem); }
 }
@@ -758,7 +737,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .benefits-timeline { max-width:calc(100vw - 4rem); }
 }
 .benefit-step { display:flex; align-items:flex-start; gap:2rem; opacity:0; transform:translateY(40px) scale(0.95); transition:all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position:relative; }
-/* Use variable-based anchor offset so JS can adapt to header height dynamically. Fallback keeps prior reasonable value. */
+
 .benefit-step { scroll-margin-top:var(--anchor-offset, 180px); }
 .benefits-timeline:not(.single-focus) .benefit-step:first-child { opacity:1; transform:translateY(0) scale(1); }
 .benefit-step.animate-in { opacity:1; transform:translateY(0) scale(1); }
@@ -776,7 +755,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .benefit-step[data-color="yellow"] .benefit-tag { background:linear-gradient(135deg,#DAA520,#B8860B); border-color:#B8860B; box-shadow:0 4px 12px -4px rgba(218,165,32,.45); }
 .benefit-step[data-color="purple"] .benefit-tag { background:linear-gradient(135deg,#6B21A8,#4C1D95); border-color:#4C1D95; box-shadow:0 4px 12px -4px rgba(107,33,168,.5); }
 
-/* Preserve StartLine's original blue in the timeline */
+
 #startline .benefit-node { background:linear-gradient(135deg, #2563eb, #1d4ed8) !important; }
 #startline .benefit-tag { background:linear-gradient(135deg, #2563eb, #1d4ed8) !important; border-color:#1d4ed8 !important; box-shadow:0 4px 12px -4px rgba(37,99,235,.5) !important; }
 .benefit-content h3 { font-size:1.5rem; font-weight:700; margin:0 0 1rem; color:#ffffff; text-shadow:0 2px 8px rgba(0,0,0,.3); }
@@ -791,8 +770,8 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   backdrop-filter:blur(8px); 
   border:1px solid rgba(255,255,255,.2); 
   text-shadow:none; 
-  display:inline-block; /* Make it only as wide as content */
-  max-width:fit-content; /* Limit width to content */
+  display:inline-block;
+  max-width:fit-content;
 }
 @supports not (backdrop-filter: blur(8px)) {
   .benefit-highlight { background:rgba(255,255,255,.35); }
@@ -814,14 +793,14 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .timeline.modemo .timeline-step:hover .timeline-marker { background:var(--green-100); box-shadow:0 0 0 4px #fff,0 0 0 6px var(--green-100); }
 }
 
-/* Extra safe spacing for very narrow screens */
+
 @media (max-width:480px){
   .timeline { padding-left:4rem; }
   .timeline-step { margin-bottom:2.4rem; }
   .comparison-stats { gap:0.75rem; }
 }
 
-/* Grouped comparison stats */
+
 .comparison-stats.grouped { display:grid; gap:1.25rem; margin-top:1.75rem; width:100%; }
 @media (min-width:900px){ .comparison-stats.grouped { grid-template-columns:1fr 1fr; } }
 .stats-group { background:#fff; border:1px solid var(--gray-200); border-radius:1rem; padding:1.25rem 1.5rem; box-shadow:var(--shadow-sm); position:relative; }
@@ -834,9 +813,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .metric span { font-size:0.65rem; letter-spacing:.1em; font-weight:600; text-transform:uppercase; color:var(--gray-500); }
 .metrics-inline { display:flex; flex-wrap:wrap; gap:0.85rem 1.25rem; }
 
-/* How It Works Page Specific Styles */
 .traditional-path-card {
-  /* Muted, darker red for strong contrast without neon saturation */
   background: linear-gradient(135deg, #c86565, #9a3a3a) !important;
   color:#ffffff !important;
   text-align: center;
@@ -850,7 +827,6 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .traditional-path-card span { color:#ffffff !important; text-shadow:none !important; }
 
 .modemo-path-card {
-  /* Muted, darker green for strong contrast */
   background: linear-gradient(135deg, #3f8d77, #2f6f59) !important;
   position: relative;
   color:#ffffff !important;
@@ -864,11 +840,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .modemo-path-card div,
 .modemo-path-card span { color:#ffffff !important; text-shadow:none !important; }
 
-/* RTW reassigned sequence:
-   1 Standardize Entry -> medium blue (#007db7)
-   2 Fast Track Entry  -> deep brand blue (#005397)
-   3 Verify Readiness  -> new navy (#0B2747)
-*/
+
 .rtw-sub-card {
   background:#007db7 !important;
   position:relative;
@@ -893,10 +865,10 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   margin:0; 
 }
 .rtw-icon svg { width:24px; height:24px; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; fill:none; }
-.rtw-sub-card.blue { /* deep brand blue now */ background:#005397 !important; border-color:#005397 !important; }
+.rtw-sub-card.blue { background:#005397 !important; border-color:#005397 !important; }
 .rtw-sub-card.navy { background:#0B2747 !important; border-color:#0B2747 !important; }
 
-/* Problem chips in RTW section */
+
 .problem-chip {
   background: #005397;
   color:#ffffff;
@@ -907,7 +879,7 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   font-weight:700;
 }
 
-/* Common white text utilities */
+
 .white-heading {
   color: #ffffff;
   font-weight: 700;
@@ -961,37 +933,33 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
 .py-12{padding-top:3rem; padding-bottom:3rem;} .py-16{padding-top:4rem; padding-bottom:4rem;} .py-20{padding-top:5rem; padding-bottom:5rem;} .py-24{padding-top:6rem; padding-bottom:6rem;}
 .pt-8{padding-top:2rem;} .mt-8{margin-top:2rem;} .pt-12{padding-top:3rem;} .pb-12{padding-bottom:3rem;}
 
-/* Enhanced Responsive Design */
+
 @media (max-width:768px){
-  /* Platform features within hero - mobile */
+
   .platform-features-grid { 
     grid-template-columns:1fr !important; 
     gap:0.75rem !important; 
     max-width:300px !important; 
     margin:0 auto !important; 
   }
-  
-  /* Hero adjustments - keep content within swoop */
+
   .hero h1 { font-size:2.5rem !important; }
   .hero p.lead { font-size:1.1rem !important; }
   .hero-swoop { width:100% !important; border-radius:0 0 0 40px !important; }
   .hero-content { padding-right:2rem !important; max-width:none !important; margin-left:1rem !important; margin-right:1rem !important; }
   .hero .wrapper { padding-left:1rem !important; padding-right:1rem !important; }
-  
-  /* Navigation adjustments */
+
   .nav { gap:1.5rem !important; }
   .nav a { font-size:0.95rem !important; }
-  
-  /* Benefits timeline mobile */
+
   .benefits-timeline { gap:2rem !important; }
   .benefit-step { gap:1.5rem !important; }
-  
-  /* Form adjustments */
+
   .form-panel { padding:1.5rem !important; }
   .button { padding:0.75rem 1.25rem !important; font-size:0.9rem !important; }
 }
 
-/* Solutions Cards Redesign */
+
 .solution-cards { align-items:stretch; }
 .solution-card { position:relative; background:rgba(255,255,255,.20); border:1px solid rgba(255,255,255,.28); border-radius:1.5rem; padding:2.5rem 2.25rem 2.75rem; backdrop-filter:blur(10px); display:flex; flex-direction:column; gap:1.75rem; box-shadow:0 8px 32px -12px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08) inset; }
 .solution-card:before { content:""; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(140deg, rgba(255,255,255,.06), transparent 60%); pointer-events:none; }
@@ -1020,12 +988,12 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .solution-features li { padding-left:1.85rem; }
   .solution-features li:before { width:1.15rem; height:1.15rem; top:0.25rem; }
 }
-/* Align bullet list starts horizontally across the two cards on desktop */
+
 @media (min-width:1024px){
   .solution-card .solution-head{ min-height:4.4rem; }
 }
 
-/* Contrast overrides when cards sit on light swoop */
+
 .hero-visual.light .solution-card {
   background:#ffffff !important;
   border:1px solid var(--gray-200) !important;
@@ -1099,17 +1067,17 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   display:inline-block; /* wrap to content like a pill */
   box-shadow:0 8px 18px -14px rgba(15,23,42,.28), 0 2px 4px -2px rgba(15,23,42,.06);
 }
-/* Cards within comparison/rtw sections on light swoop */
+
 .hero-visual.light .traditional-path-card h3,
 .hero-visual.light .modemo-path-card h3 { color:#0f172a !important; text-shadow:none !important; }
 .hero-visual.light .traditional-path-card p,
 .hero-visual.light .modemo-path-card p { color:#334155 !important; text-shadow:none !important; }
 
-/* Make Go Live card titles stand out (white text with outline on colored cards) */
+
 .hero-visual.light .traditional-path-card h3,
 .hero-visual.light .modemo-path-card h3 {
   color:#ffffff !important;
-  /* Crisp outline + soft depth for readability on any background */
+
   text-shadow:
     0 1px 0 rgba(0,0,0,.45),
     0 -1px 0 rgba(0,0,0,.45),
@@ -1119,10 +1087,10 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   -webkit-text-stroke: 0.4px rgba(0,0,0,.35);
 }
 
-/* Previous full-width containment override removed; replaced with variable-based layout above */
+
 
 @media (max-width:480px){
-  /* Very small screens - compact platform overview within hero */
+
   .platform-overview-hero { 
     padding:2rem 0 0 !important; 
   }
@@ -1135,27 +1103,22 @@ body.dark-app .hero.hero-visual:last-child { margin-bottom:0; }
   .feature-item span:first-child { 
     font-size:1rem !important; 
   }
-  
-  /* Hero very small - ensure content stays in swoop */
+
   .hero h1 { font-size:2rem !important; }
   .hero p.lead { font-size:1rem !important; }
   .hero-swoop { border-radius:0 0 0 30px !important; }
   .hero-content { padding-right:1.5rem !important; max-width:none !important; margin-left:0.75rem !important; margin-right:0.75rem !important; }
   .hero .wrapper { padding-left:0.75rem !important; padding-right:0.75rem !important; }
-  
-  /* Header logo smaller on mobile */
+
   .logo-img { height:36px !important; }
 
-  
-  /* Navigation very compact */
+
   .nav { gap:1rem !important; }
   .nav a { font-size:0.85rem !important; }
-  
-  /* Timeline very compact */
+
   .benefits-timeline { gap:1.5rem !important; margin-bottom:2rem !important; }
   .benefit-node { width:3rem !important; height:3rem !important; font-size:1.25rem !important; }
-  
-  /* Wrapper padding adjustment */
+
   .wrapper { padding:0 0.75rem !important; }
 }
 
